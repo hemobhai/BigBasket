@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+
+
+        /* Button used to open the contact form - fixed at the bottom of the page */
+        .open-button {
+        color: black;
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.8;
+        position: top;
+        bottom: 23px;
+        right: 28px;
+        width: 280px;
+        }
+        .open-button:hover {
+            color:rgba(24, 108, 24, 0.832);
+        }
+
+        /* The popup form - hidden by default */
+        .form-popup {
+        display: none;
+        position: center;
+        bottom: 0;
+        right: 15px;
+        border: none;
+        }
+
+        .form-container {
+        margin:auto;
+        max-width: 300px;
+        padding: 100px 0 50px 0;
+        background-color: white;
+        }
+
+        /* Full-width input fields */
+        
+        /* Set a style for the submit/login button */
+        .form-container .btn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom:10px;
+        }
+        
+        h3{
+            margin:70px;
+            /* margin:auto; */
+            color:#9dce51;
+            text-align: center;
+        }
+        p {
+            color:grey;
+        }
+        #email_login_btn {
+        padding: 16px 20px;
+        border: 2px;
+        border-color: black;
+        width: 100%;
+        margin-bottom:10px; 
+        }
+        #mobile_number{
+            border:none;
+            padding:5px 15px 5px 15px;
+        }
+        #hrLine {
+            margin-bottom: 100px;
+        }
+    </style>
+</head>
+    <body>
+        <button class="open-button" onclick="openForm()">Login/Signup</button>
+
+    <!-- The form -->
+        <div class="form-popup" id="myForm">
+        <form action="otp.html" class="form-container">
+            <h3>LOGIN/SIGNUP</h3>
+
+            <p>Enter Mobile Number(10-Digit)</p>
+            <input id="mobile_number" type="text" name="mobile" required>
+            <hr id="hrLine">
+
+            <button id="email_login_btn">Login using Email Address</button>
+
+            <button type="submit" class="btn">Continue</button>
+            <p>By Continuing, I accept TCP- Bigbasket's <span style:color="blue"Terms and Conditions</span> and <span color="blue">Privacy Policy</span></p>
+        </form>
+        </div>
+    </body>
+</html>
+
+<script>
+        function openForm() {
+    document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+    document.getElementById("myForm").style.display = "center";
+    }
+</script>
