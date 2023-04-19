@@ -25,13 +25,7 @@
         padding: 15px;
         margin: 5px 0 22px 0;
         border: none;
-        background: #f1f1f1;
-        }
-
-        /* When the inputs get focus, do something */
-        .form-container input[type=text]:focus, .form-container input[type=password]:focus {
-        background-color: #ddd;
-        outline: none;
+        text-align: center;
         }
 
         /* Set a style for the submit/login button */
@@ -55,22 +49,40 @@
         .form-container .btn:hover, .open-button:hover {
         opacity: 1;
         }
+        h3{
+            margin:auto;
+            padding-bottom: 25px;
+            color:#9dce51;
+            text-align: center;
+        }
+        p {
+            color:grey;
+        }
+        #resend_otp{
+            padding: 2px 2px 2px 2px;
+            text-align: center;
+            margin: 5px 0 10px 0;
+        }
+        #otp_value_input{
+            font:bold;
+            letter-spacing:0cap;
+        }
     </style>
 </head>
     <body>
     <!-- The form -->
         <div class="form-popup" id="myForm">
         <form action="otp.html" class="form-container">
-            <h1>Varify Mobile Number</h1>
+            <h3>Varify Mobile Number</h3>
             <p>Please check the OTP sent to your mobile number</p>
 
-            <input type="text" value="1234567890" name="mobile" required>
+            <input id="otp_value_input" type="text" value="1234567890" name="mobile" required>
 
             <p>Enter OTP</p>
 
             <input type="text"  name="OTP" required>
 
-            <button>Resend OTP</button>
+            <button id="resend_otp">Resend OTP</button>
 
             <button type="submit" class="btn">Varify & Continue</button>
         </form>
