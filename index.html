@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/c3011d6d48.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Big Basket</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      #navbox {
+        width: 80%;
+        margin: auto;
+      }
+      /* Top Nav CCSS Start */
+      #topnav {
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+      }
+
+      #topnav > p{
+        margin: 5px 0;
+      }
+
+      .dropbtn {
+        background-color: #ffffff;
+        color: black;
+        padding: 8px 16px;
+        font-size: 14px;
+        border: none;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #ffffff;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        right: 0;
+        left: auto;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #ddd;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .dropdown:hover .dropbtn {
+        background-color: #a5cd39;
+      }
+       /* Top Nav CCSS End */
+
+      /* Middle Nav CCSS Start */
+      #middlenav{
+        display: flex;
+        flex-direction: row;
+      }
+      #childmid1{
+        margin-right: 50px;
+      }
+      #childmid2{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex: 1;
+      }
+
+      #mybasket{
+        display: flex;
+        align-items: center;
+        background-color: #f1f1f1;
+        padding: 8px 12px;
+
+      }
+
+      #mybasket > #fntbasket{
+        margin-right: 20px;
+        font-size: 40px;
+      }
+
+      #mybasket > #colbasket{
+        display: flex;
+        flex-direction: column;
+
+      }
+
+      #colbasket > p{
+        margin: 0px
+      }
+      .search-container {
+        display: flex;
+        justify-content: center;
+      }
+
+      .search-container input[type="text"] {
+        padding: 6px;
+        border: 1px solid black;
+        font-size: 16px;
+        width: 450px;
+      }
+
+      .search-container button {
+        border: none;
+        background-color: #4caf50;
+        color: white;
+        padding: 7px 14px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .search-container button:hover {
+        background-color: #45a049;
+      }
+
+      /* Middle Nav CCSS End */
+
+      /* Bottom Nav CSS Start */
+
+      #bottomnav{
+        display: flex;
+        align-items: center;
+      }
+
+      #offers > p{
+        margin: 0;
+      }
+
+      #childbottom2{
+        display: flex;
+        flex: 1;
+        border: 1px solid rgb(196, 192, 192);
+      }
+      #childbottom2 > #offers{
+        color: black;
+        padding: 8px 16px;
+        font-size: 18px;
+      }
+
+      .dropbtn_bottomnav {
+        background-color: #a5cd39;
+        color: rgb(255, 255, 255);
+        padding: 10px 16px;
+        font-size: 16px;
+        border: none;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        
+      }
+
+      .dropdown-content_bottomnav {
+        display: none;
+        position: absolute;
+        background-color: #ffffff;
+        min-width: 259px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content_bottomnav  a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content_bottomnav a:hover {
+        background-color: #ddd;
+      }
+
+      .dropdown:hover .dropdown-content_bottomnav  {
+        display: block;
+      }
+
+      .dropdown:hover .dropbtn_bottomnav {
+        background-color: #a5cd39;
+      }
+      .lfsd{
+        margin-left: 50px;
+      }
+      #offers:hover{
+        background-color: #a5cd39;
+        color: white;
+      }
+      #offers > p:hover{
+        color: white;
+      }
+      
+      /* Bottom Nav CSS End */
+
+      /* Poster CSS Start */
+      #poster{
+        width: 80%;
+        margin: auto;
+      }
+      #poster img{
+        width: 100%;
+      }
+       /* Poster CSS End */
+
+      /* Miniboxes CSS Start */
+      #miniboxes{
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        margin: 50px auto;
+        gap: 15px;
+      }
+      /* Miniboxes CSS End */
+
+      #bankoffer{
+        width: 80%;
+        margin: 50px auto;
+      }
+
+      #bankoffer h1{
+        text-align: center;
+      }      
+
+      #bankbox{
+         display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
+      }
+
+      #bankbox img{
+        width: 100%;
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- Navbox start -->
+    <div id="navbox">
+      <div id="topnav">
+        <p>
+          <span><i class="fa-solid fa-phone"></i></span> 1860 123 1000
+        </p>
+        <p>
+          <span><i class="fa-solid fa-location-dot"></i></span> 560004,
+          Bangalore <span><i class="fa-solid fa-angle-down"></i></span>
+        </p>
+        <div class="dropdown">
+          <button class="dropbtn">
+            BigBasketeer<i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">My Account</a>
+            <a href="#">My Basket</a>
+            <a href="#">My Orders</a>
+            <a href="">Wallet</a>
+            <a href="#">Rewards</a>
+            <a href="#">Ask Us</a>
+            <a href="#">Customer Service</a>
+            <a href="#">logout</a>
+          </div>
+        </div>
+      </div>
+      <div id="middlenav">
+        <div id="childmid1"> 
+          <img
+            src="https://www.bbassets.com/static/v2659/custPage/build/content/img/bb_logo.png"
+            alt=""
+          />
+        </div>
+        <div id="childmid2">
+          <div id="mysearch">
+            <div class="search-container">
+              <form action="/search">
+                <input type="text" placeholder="Search..." />
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+          </div>
+          <div id="mybasket">
+            <div id="fntbasket"><span><i class="fa-solid fa-basket-shopping"></i></span></i></div>
+            
+            <div id="colbasket">
+              <p>My Basket</p>
+              <p>0 items</p>
+            </div>
+          </div>
+
+        </div>
+        
+      </div>
+      <div id="bottomnav">
+        <div id="childbottom1">
+          <div class="dropdown">
+            <button class="dropbtn_bottomnav">
+              SHOP BY CATEGORY <i class="fa fa-caret-down lfsd"></i>
+            </button>
+            <div class="dropdown-content_bottomnav">
+              <a href="#">My Account</a>
+              <a href="#">My Basket</a>
+              <a href="#">My Orders</a>
+              <a href="">Wallet</a>
+              <a href="#">Rewards</a>
+              <a href="#">Ask Us</a>
+              <a href="#">Customer Service</a>
+              <a href="#">logout</a>
+            </div>
+          </div>
+        </div>
+        
+        <div id="childbottom2">
+          <div id="offers">
+            <p><span><i class="fa-solid fa-tag"></i></span> OFFERS</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <!-- Navbox End -->
+
+    <!-- Poster start -->
+    <div id="poster">
+      <img src="https://www.bigbasket.com/media/uploads/banner_images/hp_m_Dry_FishBanner_1600x460_070922.jpg" alt="fishBanner">
+    </div>
+    <!-- Poster End -->
+
+    <!-- Miniboxes Start-->
+
+    <div id="miniboxes">
+      <div>
+        <img src="https://www.bigbasket.com/media/uploads/banner_images/hp_topstrip_m_250323_01.png" alt="pic1">
+      </div>
+      <div>
+        <img src="https://www.bigbasket.com/media/uploads/banner_images/hp_topstrip_m_250323_02.png" alt="pic2">
+      </div>
+      <div>
+        <img src="https://www.bigbasket.com/media/uploads/banner_images/hp_topstrip_m_250323_03.png" alt="pic3">
+      </div>
+      <div>
+        <img src="https://www.bigbasket.com/media/uploads/banner_images/hp_topstrip_m_250323_04.png" alt="pic4">
+      </div>
+      <div>
+        <img src="https://www.bigbasket.com/media/uploads/banner_images/hp_topstrip_m_250323_05.png" alt="pic5">
+      </div>
+      <div>
+        <img src="https://www.bigbasket.com/media/uploads/banner_images/hp_topstrip_m_250323_06.png" alt="pic6">
+      </div>
+
+    </div>
+     <!-- Miniboxes End-->
+
+     <!-- Bank_Offers Start -->
+
+     <div id="bankoffer">
+        <h1>Bank Offers</h1>
+        <div id="bankbox">
+          <div>
+            <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/4ea30d34-2092-4c11-9759-4f8c6fe09c6a/March_bb_PaytmWallet_360_170423.jpg" alt="paytm">
+          </div>
+          <div>
+            <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/4ea30d34-2092-4c11-9759-4f8c6fe09c6a/March_bb_IndusIndBankDC_480x360_100423.jpg" alt="indusbank">
+          </div>
+          <div>
+            <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/4ea30d34-2092-4c11-9759-4f8c6fe09c6a/March_bb_AUB_480x360_100423.jpg" alt="au_finace">
+          </div>
+          <div>
+            <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/4ea30d34-2092-4c11-9759-4f8c6fe09c6a/March_bb_HSBC_2_480x360_100423.jpg" alt="HSBC">
+          </div>
+        </div>
+     </div>
+
+     <!-- Bank_Offers End -->
+  </body>
+</html>
