@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <style>
+
+
+        /* Button used to open the contact form - fixed at the bottom of the page */
+        .open-button {
+        color: black;
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.8;
+        position: top;
+        bottom: 23px;
+        right: 28px;
+        width: 280px;
+        }
+        .open-button:hover {
+            color:rgba(24, 108, 24, 0.832);
+        }
+
+        /* The popup form - hidden by default */
+        .form-popup {
+        display: none;
+        position: center;
+        bottom: 0;
+        right: 15px;
+        border: none;
+        }
+
+        .form-container {
+        margin:auto;
+        max-width: 300px;
+        padding: 100px 0 50px 0;
+        background-color: white;
+        }
+
+        /* Full-width input fields */
+        
+        /* Set a style for the submit/login button */
+        .form-container .btn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom:10px;
+        }
+        
+        h3{
+            margin:30px;
+            /* margin:auto; */
+            color:#9dce51;
+            text-align: center;
+            padding-bottom: -5px;
+        }
+        #to_know_better {
+            color:grey;
+            text-align:center;
+            padding-bottom: 10px;
+        }
+        p {
+            color:grey;
+            text-align: left;
+        }
+        #email {
+            padding-top: -5px;
+            border:none;
+            padding-bottom:3px;
+        }
+        #mobile_number{
+            border:none;
+            padding:5px 15px 5px 15px;
+        }
+        #hrLine {
+            margin-bottom: 20px;
+        }
+        #hrLine_last {
+            margin-bottom: 60px;
+        }
+        #name_parent {
+            display:flex;
+            width:100%;
+            text-align: left;
+        }
+        .name_child {
+            margin:auto;
+            width:45%;
+        }
+        .name_child > input {
+            border:none;
+            width:90%;
+        }
+    </style>
+</head>
+    <body>
+        <button class="open-button" onclick="openForm()">Login/Signup</button>
+            <!-- The form -->
+        <div class="form-popup" id="myForm">
+            <form action="signup.html" class="form-container">  
+                <h3>Almost There</h3>
+                <p id="to_know_better">Help us to know you better!</p>
+                <div id="name_parent">
+                    <div class="name_child">
+                        <p>First Name</p>
+                        <input id="first_name" type="text" name="f_name" required>
+                        <hr id="hrLine">
+                    </div>
+                    <div class="name_child">
+                        <p>Last Name</p>
+                        <input id="last_name" type="text" name="l_name" required>
+                        <hr id="hrLine">
+                    </div>
+                </div>
+                <p>Email</p>
+                <input id="email" type="text" name="email"  required>
+                <hr id="hrLine_last">
+    
+                <button type="submit" class="btn">Start Shopping</button>
+            </form>
+        </div>
+    </body>
+</html>
+
+<script>
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+</script>
