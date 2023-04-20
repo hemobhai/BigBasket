@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruits & vegetables</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #parent {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            width: 80%;
+            margin: auto;
+            gap: 20px;
+        }
+
+        #parent > div{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+
+        #parent > div > div{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+
+        /* #header {
+            width: 100%;
+            border: 2px solid red;
+            height: 400px;
+        }
+
+        #stableimg>img {
+            width: 100%;
+            margin-top: 250px;
+        }
+
+        #paragraph>p {} */
+    </style>
+</head>
+
+<body>
+    <div id="parent">
+        <!-- <div id="header">
+            <div id="slideimage">
+                <div id="arrow-left" class="arrow"></div>
+                <div class="slide slide1">
+                </div>
+                <div class="slide slide2"></div>
+                <div class="slide slide3"></div>
+                <div id="arrow-right" class="arrow"></div>
+            </div>
+            <div id="stableimg">
+                <img src="https://www.bigbasket.com/media/uploads/flatpages/test-1/Fruits%20&%20vegetables.jpg" />
+                <div id="paragraph">
+                    <p>Fruits & vegetables</p>
+                    <select id="filter">
+                        <option value="">Revelance</option>
+                        <option value="price1">Price:High to Low</option>
+                        <option value="price2">Price:Low to High</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <div id="down">
+            <div id="right"></div>
+            <div id="left"> </div>
+        </div> -->
+    </div>
+</body>
+
+</html>
+<script>
+    var fruitsarr=[
+        {
+           img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           brand:"bb Combo",
+           name : "Onion (Loose)",
+           strickprice : 151.32,
+           mrp: 120,
+        },
+        {
+           img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           brand:"bb Combo",
+           name : "Onion (Loose)",
+           strickprice : 151.32,
+           mrp: 120,
+        },
+        {
+           img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           brand:"bb Combo",
+           name : "Onion (Loose)",
+           strickprice : 151.32,
+           mrp: 120,
+        },
+        {
+           img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           brand:"bb Combo",
+           name : "Onion (Loose)",
+           strickprice : 151.32,
+           mrp: 120,
+        },
+        {
+           img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           brand:"bb Combo",
+           name : "Onion (Loose)",
+           strickprice : 151.32,
+           mrp: 120,
+        },
+        {
+           img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           brand:"bb Combo",
+           name : "Onion (Loose)",
+           strickprice : 151.32,
+           mrp: 120,
+        },
+        {
+           img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           brand:"bb Combo",
+           name : "Onion (Loose)",
+           strickprice : 151.32,
+           mrp: 120,
+        },
+        {
+           img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           brand:"bb Combo",
+           name : "Onion (Loose)",
+           strickprice : 151.32,
+           mrp: 120,
+        },
+        {
+           img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           brand:"bb Combo",
+           name : "Onion (Loose)",
+           strickprice : 151.32,
+           mrp: 120,
+        },
+        {
+           img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           brand:"bb Combo",
+           name : "Onion (Loose)",
+           strickprice : 151.32,
+           mrp: 120,
+        },
+        {
+           img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           brand:"bb Combo",
+           name : "Onion (Loose)",
+           strickprice : 151.32,
+           mrp: 120,
+        },
+        {
+           img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           brand:"bb Combo",
+           name : "Onion (Loose)",
+           strickprice : 151.32,
+           mrp: 120,
+        },
+        {
+           img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           brand:"bb Combo",
+           name : "Onion (Loose)",
+           strickprice : 151.32,
+           mrp: 120,
+        },
+        {
+           img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           brand:"bb Combo",
+           name : "Onion (Loose)",
+           strickprice : 151.32,
+           mrp: 120,
+        },
+        
+    ];
+
+    fruitsarr.map(function(elem){
+        var div = document.createElement("div");
+
+        var image = document.createElement("img");
+        image.setAttribute("src",elem.img_url);
+
+        var brand = document.createElement("p");
+        brand.textContent=elem.brand;
+
+        var name = document.createElement("p");
+        name.textContent=elem.name;
+
+        var priceBox=document.createElement("div");
+
+        var strickprice = document.createElement("p");
+        strickprice.textContent= "Rs" + elem.strickprice;
+
+        var mrp=document.createElement("p");
+        mrp.textContent=elem.mrp;
+
+        priceBox.append(strickprice,mrp);
+        div.append(image,brand,name,priceBox);
+        document.querySelector("#parent").append(div);
+    })
+
+</script>
