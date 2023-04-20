@@ -23,6 +23,7 @@
 
         #parent > div{
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding: 20px;
         }
 
 
@@ -30,6 +31,33 @@
             display: flex;
             flex-direction: row;
             gap: 20px;
+        }
+        
+        #parent > div > img{
+            width: 100%;
+        }
+
+        #parent > div > div > p:first-child{
+            text-decoration: line-through;
+        }
+
+        #parent > #crtqty{
+            display: flex;
+            flex-direction: row;
+        }
+        #qty > input{
+            width: 70%;
+        }
+
+        #parent > #qty{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+        }
+
+        #crtqty > div{
+            width: 50%;
+            
         }
 
 
@@ -188,6 +216,7 @@
 
         var image = document.createElement("img");
         image.setAttribute("src",elem.img_url);
+        
 
         var brand = document.createElement("p");
         brand.textContent=elem.brand;
@@ -198,13 +227,40 @@
         var priceBox=document.createElement("div");
 
         var strickprice = document.createElement("p");
-        strickprice.textContent= "Rs" + elem.strickprice;
+        strickprice.textContent= "Rs. " + elem.strickprice;
 
         var mrp=document.createElement("p");
-        mrp.textContent=elem.mrp;
+        mrp.textContent="Rs. " + elem.mrp;
 
+        // started 
+
+        var delivery=document.createElement("p");
+        delivery.innerText="Standard Delivery: Today 2:00PM - 9:30PM";
+
+        var divCartqty_parent=document.createElement("div");
+        divCartqty_parent.setAttribute("id", "crtqty")
+
+        var divQty_child1=document.createElement("div");
+        divQty_child1.setAttribute("id", "qty")
+        
+        var spanQty=document.createElement("span");
+        spanQty.innerText="Qty";
+
+        var inputQty=document.createElement("input");
+        inputQty.setAttribute("placeholder","Per Kg")
+
+        var divQty_child2=document.createElement("div");
+        divQty_child2.setAttribute("id", "cart")
+
+        var cartBtn=document.createElement("button");
+        cartBtn.textContent = "Add to Cart";
+
+        
+        divQty_child1.append(spanQty,inputQty);
+        divQty_child2.append(cartBtn)
+        divCartqty_parent.append(divQty_child1,divQty_child2);
         priceBox.append(strickprice,mrp);
-        div.append(image,brand,name,priceBox);
+        div.append(image,brand,name,priceBox,delivery,divCartqty_parent);
         document.querySelector("#parent").append(div);
     })
 
