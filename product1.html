@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c3011d6d48.js" crossorigin="anonymous"></script>
+
+    <title>Fruits & vegetables</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+
+
+        #navbox {
+            width: 80%;
+            margin: auto;
+        }
+
+        /* Top Nav CCSS Start */
+        #topnav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+        }
+
+        #topnav>p {
+            margin: 5px 0;
+        }
+
+        .dropbtn {
+            background-color: #ffffff;
+            color: black;
+            padding: 8px 16px;
+            font-size: 14px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            right: 0;
+            left: auto;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #a5cd39;
+        }
+
+        /* Top Nav CCSS End */
+
+        /* Middle Nav CCSS Start */
+        #middlenav {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #childmid1 {
+            margin-right: 50px;
+        }
+
+        #childmid2 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex: 1;
+        }
+
+        #mybasket {
+            display: flex;
+            align-items: center;
+            background-color: #f1f1f1;
+            padding: 8px 12px;
+
+        }
+
+        #mybasket>#fntbasket {
+            margin-right: 20px;
+            font-size: 40px;
+        }
+
+        #mybasket>#colbasket {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        #colbasket>p {
+            margin: 0px
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-container input[type="text"] {
+            padding: 6px;
+            border: 1px solid black;
+            font-size: 16px;
+            width: 450px;
+        }
+
+        .search-container button {
+            border: none;
+            background-color: #4caf50;
+            color: white;
+            padding: 7px 14px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .search-container button:hover {
+            background-color: #45a049;
+        }
+
+        /* Middle Nav CCSS End */
+
+        /* Bottom Nav CSS Start */
+
+        #bottomnav {
+            display: flex;
+            align-items: center;
+        }
+
+        #offers>p {
+            margin: 0;
+        }
+
+        #childbottom2 {
+            display: flex;
+            flex: 1;
+            border: 1px solid rgb(196, 192, 192);
+        }
+
+        #childbottom2>#offers {
+            color: black;
+            padding: 8px 16px;
+            font-size: 18px;
+        }
+
+        .dropbtn_bottomnav {
+            background-color: #a5cd39;
+            color: rgb(255, 255, 255);
+            padding: 10px 16px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+
+        }
+
+        .dropdown-content_bottomnav {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 259px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content_bottomnav a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content_bottomnav a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content_bottomnav {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn_bottomnav {
+            background-color: #a5cd39;
+        }
+
+        .lfsd {
+            margin-left: 50px;
+        }
+
+        #offers:hover {
+            background-color: #a5cd39;
+            color: white;
+        }
+
+        #offers>p:hover {
+            color: white;
+        }
+
+        /* Bottom Nav CSS End */
+
+
+
+        #parent {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* width: 80%;
+            margin: auto; */
+            gap: 20px;
+        }
+
+        #parent>div {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            padding: 20px;
+        }
+        #parent>div:hover {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+
+        #parent>div>div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 3px;
+            margin-bottom: -10px;
+            background-color: #f4f3f2;
+            padding: 5px;
+        }
+
+        #parent>div>img {
+            width: 100%;
+        }
+
+        #parent>div>div>h4:nth-child(2) {
+            text-decoration: line-through;
+            font-size: 11px;
+        }
+
+        #parent>div>div>p {
+            font-size: 10px;
+        }
+
+        #parent>div>div>h4 {
+            font-weight: 200;
+            font-size: 15px;
+        }
+
+        #parent>#crtqty {
+            display: flex;
+            flex-direction: row;
+            margin-top: 10px;
+        }
+
+        #crtqty {
+            padding-bottom: 15px;
+        }
+
+        #cart>button {
+            background-color: #f5d177;
+            border: none;
+            padding: 4px 9px;
+            border-radius: 5px;
+        }
+        #cart>button:hover {
+            background-color: #ebb326;
+        }
+
+        #qty>input {
+            width: 52%;
+            margin-left: 6px;
+        }
+
+        #parent>#qty {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+        }
+
+        #crtqty>div {
+            width: 50%;
+        }
+
+        #parent>div>p {
+            font-size: 13px;
+            margin: 5px 0;
+        }
+
+        #parent>div>p:nth-child(5) {
+            background: #f4f3f2;
+            margin: 0;
+            padding: 5px;
+        }
+
+        #parent>div>h3,
+        h4 {
+            margin: 5px 0;
+        }
+
+        /* mainbox css start */
+        #mainbox {
+            display: flex;
+            width: 80%;
+            margin: 40px auto;
+        }
+
+        #mainbox>#left {
+            width: 15%;
+        }
+
+        #mainbox>#right {
+            width: 85%;
+            border-left: 2px solid #8080804d;
+            padding-left: 20px;
+
+        }
+
+        #left>h2 {
+            margin-bottom: 5px;
+        }
+
+        #left>hr {
+            margin: 10px;
+            width: 80%;
+        }
+
+        #right>div:first-child {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        #right>div>select {
+            width: 20%;
+            padding: 6px;
+        }
+
+        hr{
+            margin: 20px;
+            border: 1px solid #8080804d;
+        }
+
+
+        /* minibanner css start */
+
+        #minibanner{
+            width: 80%;
+            margin: 40px auto;
+        }
+        #minibanner>img{
+            width: 100%;
+        }
+
+        #bannerbig{
+            width: 80%;
+            margin: 40px auto;
+        }
+
+        #bannerbig>img{
+            width: 100%;
+        }
+
+
+        /* footer css start */
+
+
+        /* onlinegeroery CSS start */
+        #onlinegrocery {
+            width: 77%;
+            margin: 50px auto;
+            border: 1px solid #dbd9d9;
+            padding: 22px;
+        }
+
+        #onlinegrocery>h2 {
+            margin: 0;
+        }
+
+        /* onlinegeroery CSS End */
+
+        /* footerlinks CSS Start */
+        #footerlinks {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            width: 80%;
+            margin: 50px auto 30px;
+        }
+
+        #footerlinks ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #footerlinks ul>li {
+            padding: 5px 0;
+        }
+
+        #footerlinks ul>li:first-child {
+            font-size: 17px;
+            color: #a5cd39;
+        }
+
+        #footerlinks ul>li>a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #footerlinks ul>li>a:hover {
+            color: #a5cd39;
+        }
+
+        #socialicons {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            font-size: 40px;
+        }
+
+        #socialicons .fb {
+            color: rgb(36, 88, 231);
+        }
+
+        #socialicons .fb:hover {
+            color: #a5cd39
+        }
+
+        #socialicons .pi {
+            color: rgb(244, 13, 24);
+        }
+
+        #socialicons .pi:hover {
+            color: #a5cd39
+        }
+
+        #socialicons .tw {
+            color: rgb(13, 167, 244);
+        }
+
+        #socialicons .tw:hover {
+            color: #a5cd39
+        }
+
+        #socialicons .insta {
+            color: rgb(244, 13, 71);
+        }
+
+        #socialicons .insta:hover {
+            color: #a5cd39
+        }
+
+        /* footerlinks CSS End */
+        #footdetails {
+            width: 80%;
+            margin: auto;
+        }
+
+        #footdetails h4 {
+            color: #a5cd39;
+            margin: 0;
+        }
+
+        #footdetails p {
+            margin: 10px 0;
+        }
+
+
+        #copyrights {
+            background-color: #eaeaea;
+            padding: 10px;
+        }
+
+        #copyrights div {
+            width: 80%;
+            margin: auto;
+        }
+
+        #copyrights p {
+            margin: 0;
+        }
+
+        /* footer css end */
+
+        /* #header {
+            width: 100%;
+            border: 2px solid red;
+            height: 400px;
+        }
+
+        #stableimg>img {
+            width: 100%;
+            margin-top: 250px;
+        }
+
+        #paragraph>p {} */
+    </style>
+</head>
+
+<body>
+    <!-- Navbox start -->
+    <div id="navbox">
+        <div id="topnav">
+            <p>
+                <span><i class="fa-solid fa-phone"></i></span> 1860 123 1000
+            </p>
+            <p>
+                <span><i class="fa-solid fa-location-dot"></i></span> 560004,
+                Bangalore <span><i class="fa-solid fa-angle-down"></i></span>
+            </p>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    BigBasketeer<i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">My Account</a>
+                    <a href="#">My Basket</a>
+                    <a href="#">My Orders</a>
+                    <a href="">Wallet</a>
+                    <a href="#">Rewards</a>
+                    <a href="#">Ask Us</a>
+                    <a href="#">Customer Service</a>
+                    <a href="#">logout</a>
+                </div>
+            </div>
+        </div>
+        <div id="middlenav">
+            <div id="childmid1">
+                <img src="https://www.bbassets.com/static/v2659/custPage/build/content/img/bb_logo.png" alt="" />
+            </div>
+            <div id="childmid2">
+                <div id="mysearch">
+                    <div class="search-container">
+                        <form action="/search">
+                            <input type="text" placeholder="Search..." />
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div id="mybasket">
+                    <div id="fntbasket"><span><i class="fa-solid fa-basket-shopping"></i></span></div>
+
+                    <div id="colbasket">
+                        <p>My Basket</p>
+                        <p>0 items</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div id="bottomnav">
+            <div id="childbottom1">
+                <div class="dropdown">
+                    <button class="dropbtn_bottomnav">
+                        SHOP BY CATEGORY <i class="fa fa-caret-down lfsd"></i>
+                    </button>
+                    <div class="dropdown-content_bottomnav">
+                        <a href="#">My Account</a>
+                        <a href="#">My Basket</a>
+                        <a href="#">My Orders</a>
+                        <a href="">Wallet</a>
+                        <a href="#">Rewards</a>
+                        <a href="#">Ask Us</a>
+                        <a href="#">Customer Service</a>
+                        <a href="#">logout</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="childbottom2">
+                <div id="offers">
+                    <p><span><i class="fa-solid fa-tag"></i></span> OFFERS</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Navbox End -->
+
+    <!-- banner Big start -->
+
+    <div id="bannerbig">
+        <img src="https://www.bigbasket.com/media/uploads/banner_images/Imported_Bangalore-1200x300-170423.jpg" alt="bannerBig">
+    </div>
+
+    <!-- banner Big End -->
+
+    <!-- minibanner start -->
+    <div id="minibanner">
+        <img src="https://www.bigbasket.com/media/uploads/flatpages/test-1/Fruits%20&%20vegetables.jpg" alt="minibanner">
+    </div>
+    <!-- minibanner End -->
+
+
+    <div id="mainbox">
+        <div id="left">
+            <h2>Brand</h2>
+            <hr>
+            <input type="checkbox" id="bb Combo" name="bb Combo" value="bb Combo" onchange="fnbbCombo()">
+            <label for="bb Combo"> bb Combo</label>
+            <br>
+            <input type="checkbox" id="Fresho" name="Fresho" value="Fresho" onchange="fnFresho()">
+            <label for="Fresho"> Fresho</label>
+            <br>
+            <input type="checkbox" id="Hoovu Fresh" name="Hoovu Fresh" value="Hoovu Fresh" onchange="fnHoovuFresh()">
+            <label for="Hoovu Fresh"> Hoovu Fresh</label>
+            <br>
+            <input type="checkbox" id="On1y" name="On1y" value="On1y" onchange="fnOn1y()">
+            <label for="On1y">On1y</label>
+            <br>
+            <input type="checkbox" id="Organic" name="Organic" value="Organic">
+            <label for="Organic"> Organic</label>
+            <br>
+            <input type="checkbox" id="Shades of Spring" name="Shades of Spring" value="Shades of Spring">
+            <label for="Shades of Spring"> Shades of Spring</label>
+            <br>
+            <input type="checkbox" id="Trikaya" name="Trikaya" value="Trikaya">
+            <label for="Trikaya">Trikaya</label>
+            <br>
+
+            <h2>Price</h2>
+            <hr>
+            <input type="checkbox" id="Less than Rs 20" name="Less than Rs 20" value="Less than Rs 20"
+                onchange="fnls20()">
+            <label for="Less than Rs 20 "> Less than Rs 20 </label>
+            <br>
+            <input type="checkbox" id="Rs 21 to Rs 50" name="Rs 21 to Rs 50" value="Rs 21 to Rs 50"
+                onchange="fnls2150()">
+            <label for="Rs 21 to Rs 50"> Rs 21 to Rs 50</label>
+            <br>
+            <input type="checkbox" id="Rs 51 to Rs 100" name="HRs 51 to Rs 100 " value="Rs 51 to Rs 100"
+                onchange="fnls51100()">
+            <label for="Rs 51 to Rs 100"> Rs 51 to Rs 100</label>
+            <br>
+            <input type="checkbox" id="Rs 101 to Rs 200" name="Rs 101 to Rs 200" value="Rs 101 to Rs 200"
+                onchange="fnls101200()">
+            <label for="Rs 101 to Rs 200">Rs 101 to Rs 200</label>
+            <br>
+            <input type="checkbox" id="Rs 201 to Rs 500" name="Rs 201 to Rs 500" value="Rs 201 to Rs 500"
+                onchange="fnls201500()">
+            <label for="Rs 201 to Rs 500"> Rs 201 to Rs 500</label>
+            <br>
+            <input type="checkbox" id="More than Rs 501" name="More than Rs 501" value="More than Rs 501"
+                onchange="fnls501()">
+            <label for="More than Rs 501">More than Rs 501</label>
+        </div>
+        <div id="right">
+            <div>
+                <h2>Fruits & Vegetables</h2>
+                <select name="sort" id="sort" onchange="fnSort()">
+                    <option value="all">All</option>
+                    <option value="Pl2h">Price - Low to High</option>
+                    <option value="Ph2l">Price - High to Low</option>
+                </select>
+            </div>
+            <hr>
+            <!-- Parent products Start -->
+            <div id="parent"></div>
+            <!-- Parent products End -->
+        </div>
+    </div>
+
+    <!-- footer start -->
+
+    <!-- online grocery details start -->
+    <div id="onlinegrocery">
+        <h2>bigbasket - online grocery store</h2>
+        <p>Did you ever imagine that the freshest of fruits and vegetables, top quality pulses and food grains, dairy
+            products and hundreds of branded items could be handpicked and delivered to your home, all at the click of a
+            button? India's first comprehensive online megastore, bigbasket.com, brings a whopping 20000+ products with
+            more
+            than 1000 brands, to over 4 million happy customers. From household cleaning products to beauty and makeup,
+            bigbasket has everything you need for your daily needs. bigbasket.com is convenience personified We've taken
+            away
+            all the stress associated with shopping for daily essentials, and you can now order all your household
+            products
+            and even buy groceries online without travelling long distances or standing in serpentine queues. Add to
+            this the
+            convenience of finding all your requirements at one single source, along with great savings, and you will
+            realize
+            that bigbasket- India's largest online supermarket, has revolutionized the way India shops for groceries.
+            Online
+            grocery shopping has never been easier. Need things fresh? Whether it's fruits and vegetables or dairy and
+            meat,
+            we have this covered as well! Get fresh eggs, meat, fish and more online at your convenience. Hassle-free
+            Home
+            Delivery options</p>
+        <p>We deliver to 25 cities across India and maintain excellent delivery times, ensuring that all your products
+            from
+            groceries to snacks branded foods reach you in time.</p>
+        <ul>
+            <li>Slotted Delivery: Pick the most convenient delivery slot to have your grocery delivered. From early
+                morning
+                delivery for early birds, to late-night delivery for people who work the late shift, bigbasket caters to
+                every
+                schedule.</li>
+            <li>Express Delivery: This super useful service can be availed by customers in cities like Bangalore,
+                Mumbai,
+                Pune, Chennai, Kolkata, Hyderabad and Delhi-NCR in which we deliver your orders to your doorstep in 90
+                Minutes.
+            </li>
+            <li>BB Specialty stores: Missed out on buying that essential item from your favorite neighborhood store for
+                tonight's party? We'll deliver it for you! From bakery, sweets and meat to flowers and chocolates, we
+                deliver
+                your order in 90 minutes, through a special arrangement with a nearby specialty store, verified by us.
+            </li>
+        </ul>
+        <button>Read More..</button>
+    </div>
+    <!-- online grocery details End -->
+
+    <!-- footerLinks start -->
+    <div id="footerlinks">
+        <div>
+            <ul>
+                <li>bigbasket</li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">In News</a></li>
+                <li><a href="#">Green bigbasket</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Affiliate</a></li>
+                <li><a href="#">Terms and Conditions</a></li>
+                <li><a href="#">Careers At bigbasket</a></li>
+                <li><a href="#">bb Instant</a></li>
+                <li><a href="#">bb Daily</a></li>
+                <li><a href="#">bb Blog</a></li>
+                <li><a href="#">bbnow</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>Help</li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">bb Wallet T&Cs</a></li>
+                <li><a href="#">Vendor Connect</a></li>
+
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>Download Our App</li>
+                <li><a href="#"><img
+                            src="https://www.bbassets.com/static/v2659/custPage/build/content/img/Google-App-store-icon.png"
+                            alt="googlepay"></a></li>
+                <li><a href="#"><img
+                            src="https://www.bbassets.com/static/v2659/custPage/build/content/img/Apple-App-store-icon.png"
+                            alt="Appstore"></a></li>
+
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>Get Social With Us</li>
+                <div id="socialicons">
+                    <li><a href="#"><i class="fa-brands fa-facebook fb"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-pinterest pi"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-twitter tw"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram insta"></i></a></li>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <!-- footerLinks End -->
+
+
+
+    <!-- footdetails Start -->
+    <div id="footdetails">
+        <hr>
+        <div>
+            <h4>POPULAR CATEGORIES:</h4>
+            <p>Sunflower Oils, Wheat Atta, Ghee, Milk, Health Drinks, Flakes, Organic F&V, Namkeen, Eggs, Floor
+                Cleaners,
+                Other Juices, Leafy Vegetables, Frozen Veg Food, Diapers & Wipes,</p>
+        </div>
+        <div>
+            <h4>POPULAR BRANDS:</h4>
+            <p>
+                Amul, Nescafe , MTR, RED BULL , elite cake, Pediasure, Yummiez, Yera, Yakult, Britannia, Wow Momo,
+                Fortune ,
+                Haldirams , Ferrero, Lays, Patanjali, McCain, kwality walls, Cadbury Dairy Milk, Pedigree,</p>
+        </div>
+        <div>
+            <h4>CITIES WE SERVE:</h4>
+            <p>Bangalore, Hyderabad, Mumbai, Pune, Chennai, Delhi, Mysore, Madurai, Coimbatore, Vijayawada-Guntur,
+                Kolkata,
+                Ahmedabad-Gandhinagar, Nashik Business, Lucknow-Kanpur, Gurgaon, Vadodara, Visakhapatnam, Surat, Nagpur,
+                Patna,
+                Indore, Chandigarh Tricity, Jaipur, Bhopal, Noida-Ghaziabad, Kochi, Krishna District,
+                Bhubaneshwar-Cuttack,
+                Guwahati, Renigunta, Hubli, Davanagere, Trichy, Amravati, Raipur, Rajkot, Gwalior, Bareilly, Allahabad,
+                Hyderabad Rural, Bangalore Rural, Chennai Rural, Vizag Rural, Lucknow Rural, Noida Rural, Ahmedabad
+                Rural,
+                Bhopal Rural, Bhubaneswar Rural, Coimbatore Rural, Chandigarh Rural, Gurugram Rural, Guwahati Rural,
+                Indore
+                Rural, Kochi Rural, Kolkata Rural, Mumbai Rural, Mysore Rural, Nagpur Rural, Patna Rural, Pune Rural,
+                Surat
+                Rural, Vadodara Rural, Jaipur Rural, Ranchi, Nashik, Agra, Kozhikode, Amritsar, </p>
+        </div>
+        <div id="mobplay">
+            <h4>PAYMENT OPTIONS:</h4>
+            <div><img src="https://www.bbassets.com/static/v2659/custPage/build/content/img/footersprite.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- footdetails End -->
+    <!-- copyrights Start -->
+    <div id="copyrights">
+        <div>
+            <p>Copyright © 2022-2024 Supermarket Grocery Supplies Pvt Ltd</p>
+        </div>
+    </div>
+    <!-- copyrights End -->
+
+    <!-- Footer End -->
+
+
+
+</body>
+
+</html>
+<script>
+    var arr = [
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+            brand: "bb Combo",
+            name: "Onion (Loose)",
+            strickprice: 151.32,
+            mrp: 120,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+            brand: "bb Combo",
+            name: "Onion (Loose)",
+            strickprice: 151.32,
+            mrp: 120,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+            brand: "bb Combo",
+            name: "Onion (Loose)",
+            strickprice: 151.32,
+            mrp: 120,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+            brand: "bb Combo",
+            name: "Onion (Loose)",
+            strickprice: 151.32,
+            mrp: 120,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+            brand: "bb Combo",
+            name: "Onion (Loose)",
+            strickprice: 151.32,
+            mrp: 120,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+            brand: "bb Combo",
+            name: "Onion (Loose)",
+            strickprice: 151.32,
+            mrp: 120,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+            brand: "bb Combo",
+            name: "Onion (Loose)",
+            strickprice: 151.32,
+            mrp: 120,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+            brand: "bb Combo",
+            name: "Onion (Loose)",
+            strickprice: 151.32,
+            mrp: 120,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+            brand: "bb Combo",
+            name: "Onion (Loose)",
+            strickprice: 151.32,
+            mrp: 120,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+            brand: "Fresho",
+            name: "Onion (Loose)",
+            strickprice: 151.32,
+            mrp: 120,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+            brand: "Fresho",
+            name: "Onion (Loose)",
+            strickprice: 151.32,
+            mrp: 120,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+            brand: "Fresho",
+            name: "Onion (Loose)",
+            strickprice: 151.32,
+            mrp: 120,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+            brand: "Fresho",
+            name: "Onion (Loose)",
+            strickprice: 151.32,
+            mrp: 120,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+            brand: "Fresho",
+            name: "Onion (Loose)",
+            strickprice: 151.32,
+            mrp: 120,
+        },
+
+    ];
+    display(arr);
+    function display(arr){
+    arr.map(function (elem) {
+        var div = document.createElement("div");
+
+        var image = document.createElement("img");
+        image.setAttribute("src", elem.img_url);
+
+
+        var brand = document.createElement("p");
+        brand.textContent = elem.brand;
+
+        var name = document.createElement("h3");
+        name.textContent = elem.name;
+
+        var priceBox = document.createElement("div");
+
+        var j_mrp = document.createElement("p");
+        j_mrp.textContent = "MRP-";
+
+        var strickprice = document.createElement("h4");
+        strickprice.textContent = "Rs." + elem.strickprice;
+
+        var mrp = document.createElement("h4");
+        mrp.textContent = "Rs. " + elem.mrp;
+
+        // started 
+
+        var delivery = document.createElement("p");
+        delivery.innerText = "Standard Delivery: Today 2:00PM - 9:30PM";
+
+        var divCartqty_parent = document.createElement("div");
+        divCartqty_parent.setAttribute("id", "crtqty")
+
+        var divQty_child1 = document.createElement("div");
+        divQty_child1.setAttribute("id", "qty")
+
+        var spanQty = document.createElement("span");
+        spanQty.innerText = "Qty";
+
+        var inputQty = document.createElement("input");
+        inputQty.setAttribute("placeholder", "Per Kg");
+        inputQty.setAttribute("id", "quantityIp");
+
+        
+
+        var divQty_child2 = document.createElement("div");
+        divQty_child2.setAttribute("id", "cart")
+        
+
+        var cartBtn = document.createElement("button");
+        cartBtn.innerHTML = '<i class="fa-solid fa-basket-shopping"></i>' + " Cart";
+        cartBtn.addEventListener("click",function(){
+            fnAddToCart(elem);
+        });
+
+
+        divQty_child1.append(spanQty, inputQty);
+        divQty_child2.append(cartBtn)
+        divCartqty_parent.append(divQty_child1, divQty_child2);
+        priceBox.append(j_mrp, strickprice, mrp);
+        div.append(image, brand, name, priceBox, delivery, divCartqty_parent);
+        document.querySelector("#parent").append(div);
+    });
+}   
+     var cartArr=JSON.parse(localStorage.getItem("cartList")) || [];
+    function fnAddToCart(elem){
+        // var cartArr=JSON.parse(localStorage.getItem("cartList")) || [];
+        var val=document.getElementById("quantityIp").value;
+        var ele={
+            image_url:elem.img_url,
+            name:elem.name,
+            strickprice:elem.strickprice,
+            mrp:elem.mrp,
+            perKg:val
+
+            
+        }
+        console.log(ele);
+
+        cartArr.push(ele);
+
+        localStorage.setItem("cartList",JSON.stringify(cartArr));
+    }
+
+    function fnbbCombo() {
+
+        var a = arr.filter(function (ele) {
+            return ele.brand === "bb Combo";
+        });
+        console.log(a);
+        display(a);
+    };
+    function fnFresho() {
+
+        var a = arr.filter(function (ele) {
+            return ele.brand === "Fresho";
+        });
+
+        console.log(a);
+        display(a);
+    };
+    function fnHoovuFresh() {
+        var a = arr.filter(function (ele) {
+            return ele.brand === "Hoovu Fresh";
+        });
+        event,target.parentNode.remove();
+        console.log(a);
+        display(a);
+    };
+    function fnOn1y() {
+        var a = arr.filter(function (ele) {
+            return ele.brand === "On1y";
+        });
+
+        console.log(a);
+        display(a);
+    };
+    function fnls20() {
+        var a = arr.filter(function (ele) {
+            return ele.mrp > 0 && ele.mrp <= 20;
+        });
+
+        console.log(a);
+        display(a);
+    };
+    function fnls2150() {
+        var a = arr.filter(function (ele) {
+            return ele.mrp > 20 && ele.mrp <= 50;
+        });
+
+        console.log(a);
+        display(a);
+    };
+    function fnls51100() {
+        var a = arr.filter(function (ele) {
+            return ele.mrp > 50 && ele.mrp <= 100;
+        });
+
+        console.log(a);
+        display(a);
+    };
+    function fnls101200() {
+        var a = arr.filter(function (ele) {
+            return ele.mrp > 100 && ele.mrp <= 200;
+        });
+
+        console.log(a);
+        display(a);
+    };
+    function fnls201500() {
+        var a = arr.filter(function (ele) {
+            return ele.mrp > 200 && ele.mrp <= 500;
+        });
+
+        console.log(a);
+        display(a);
+    };
+    function fnls501() {
+        var a = arr.filter(function (ele) {
+            return ele.mrp > 500;
+        });
+
+        console.log(a);
+        display(a);
+    };
+
+</script>
