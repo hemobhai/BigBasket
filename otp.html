@@ -4,51 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Otp Page</title>
+    <title>dummy OTP page</title>
     <style>
-       
-        /* Button used to open the contact form - fixed at the bottom of the page */
 
-        /* The popup form - hidden by default */
-
-        /* Add styles to the form container */
         .form-container {
-        margin:auto;
+        margin-top: 30px;
         max-width: 300px;
         padding: 100px 0 0 50px;
-        background-color: white;
         }
 
         /* Full-width input fields */
-        .form-container input[type=text], .form-container input[type=password] {
+        .form-container{
         width: 100%;
         padding: 15px;
-        margin: 5px 0 22px 0;
+        margin: auto;
+        margin-top: 150px;
         border: none;
         text-align: center;
+        border: 2px solid black;
         }
 
         /* Set a style for the submit/login button */
         .form-container .btn {
-        background-color: #04AA6D;
+        background-color: #9dce51;;
         color: white;
         padding: 16px 20px;
         border: none;
         cursor: pointer;
         width: 100%;
         margin-bottom:10px;
-        opacity: 0.8;
         }
 
         /* Add a red background color to the cancel button */
-        .form-container .cancel {
-        background-color: red;
-        }
-
-        /* Add some hover effects to buttons */
-        .form-container .btn:hover, .open-button:hover {
-        opacity: 1;
-        }
         h3{
             margin:auto;
             padding-bottom: 25px;
@@ -64,31 +51,85 @@
             margin: 5px 0 10px 0;
         }
         #otp_value_input{
-            font:bold;
-            letter-spacing:0cap;
+            font-weight:bold;
+            word-spacing: 20px;
+        }
+        #hrLine {
+            margin-bottom: 20px;
+            margin-top: -5px;
+        }
+        #otp_input {
+            width:90%;
+            text-align: center;
+        }
+        #resend_otp {
+            border: 1px solid black;
+            background-color: white;
+            font-weight: bold;
+            padding:5px;
         }
     </style>
 </head>
-    <body>
-    <!-- The form -->
-        <div class="form-popup" id="myForm">
+<body>
+    <main>
+        <div id="myForm">
 
             <!-- i am make changes in it -->
-        <form action="signup.html" class="form-container">
+            <form action="signup.html" id="otp_form" class="form-container">
 
-            <h3>Varify Mobile Number</h3>
-            <p>Please check the OTP sent to your mobile number</p>
+                <h3>Varify Mobile Number</h3>
+                <p>Please check the OTP sent to your mobile number</p>
+                <h4 id="creden"></h4>
+                <p>Enter OTP</p>
 
-            <input id="otp_value_input" type="text" value="1234567890" name="mobile" required>
+                <input type="text" id="otp_input" name="OTP" required>
+                <hr id="hrLine">
 
-            <p>Enter OTP</p>
+                <button id="resend_otp">Resend OTP</button>
 
-            <input type="text"  name="OTP" required>
-
-            <button id="resend_otp">Resend OTP</button>
-
-            <button type="submit" class="btn">Varify & Continue</button>
-        </form>
+                <input type="submit" class="btn" value="Varify & Continue"/>
+            </form>
         </div>
-    </body>
+    </main>
+</body>
 </html>
+<script>
+
+    // to print the value of email in the h4 tag
+    var storedValue = localStorage.getItem("email_2");
+    var headingElement = document.getElementById("creden");
+    headingElement.textContent = storedValue;
+
+    var storedValue = localStorage.getItem("mobile_2");
+    var headingElement = document.getElementById("creden");
+    headingElement.textContent = storedValue;
+
+
+
+    // #########  code for the check if account is already created or not #########
+
+        // var form = document.getElementById("otp_form");
+        // form.addEventListener('submit', function(event) {
+        //     event.preventDefault();
+        
+        //     var credential = document.querySelector('#creden').value;
+            
+        //     var cred = JSON.parse(localStorage.getItem('Cred'));
+        //         var str=localStorage.getItem("name1")
+        //     if (cred !== null) {
+        //         var matchingCred = cred.find(account => cred.email === credential);
+        
+        //         if (matchingCred) {
+
+        //             //redirect to the home page
+        //             window.location.href = "home.html"
+                
+        //         } else {
+        //             //  heading.textContent = 'Wrong Credentials';
+                
+        //             //redirect to the sign up page
+        //             window.location.href = "dummySignup.html"
+        //         }
+        //     }
+        // });
+</script>

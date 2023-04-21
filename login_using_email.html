@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dummy Email login</title>
+    <style>
+        .form-container {
+        margin:auto;
+        max-width: 300px;
+        padding: 100px 0 50px 0;
+        background-color: white;
+        border: 1px solid black;
+        text-align: center;
+        }
+        #signin{
+            margin: 100px auto;
+            padding:5px;
+        }
+        #btn {
+        background-color: #9dce51;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom:10px;
+        }
+        h3{ 
+            margin-top:-60px;
+            color:#9dce51;
+            text-align: center;
+        }
+        p {
+            color:grey;
+        }
+        .mobile_login_btn {
+            font-weight: bold;
+            background-color: white;
+            display: inline-block;
+            padding: 16px 20px;
+            border: 1px solid black;
+            width: 85%;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+        }
+        #email_address{
+            border:none;
+            width:90%;
+            padding:5px 15px 5px 15px;
+            text-align: center;
+        }
+        #hrLine {
+            margin-top:-5px;
+            margin-bottom: 100px;
+        }
+        #last_p_tag {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="signin">
+          <form id="email_login_form" class="form-container">
+            <h3>LOGIN/SIGN UP</h3>
+            <p>Enter Email Address <p>
+            <input type="email" id="email_address" required />
+            <hr id="hrLine">
+           
+            <a href="login.html" class="mobile_login_btn">Login using Mobile Number</a>
+           
+            <input id="btn" type="submit" value="Continue" />
+            <p id="last_p_tag">By Continuing, I accept TCP- Bigbasket's <span style=color:blue;>Terms and Conditions</span> and <span style=color:blue;>Privacy Policy</span></p>
+          </form>
+        </div>
+    </main>
+</body>
+</html>
+
+   <script>
+    document.getElementById("email_login_form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+    var inputValue = document.getElementById("email_address").value;
+    localStorage.setItem("email_2", inputValue);
+    window.location.href = "otp.html"; // Redirect to otp.html
+    });
+</script> 

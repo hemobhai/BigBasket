@@ -4,57 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup Page</title>
+    <title>signupPage</title>
     <style>
-
-
-        /* Button used to open the contact form - fixed at the bottom of the page */
-        .open-button {
-        color: black;
-        padding: 5px 10px;
-        border: none;
-        cursor: pointer;
-        opacity: 0.8;
-        position: top;
-        bottom: 23px;
-        right: 28px;
-        width: 280px;
-        }
-        .open-button:hover {
-            color:rgba(24, 108, 24, 0.832);
-        }
-
-        /* The popup form - hidden by default */
-        .form-popup {
-        display: none;
-        position: center;
-        bottom: 0;
-        right: 15px;
-        border: none;
-        }
-
         .form-container {
         margin:auto;
         max-width: 300px;
         padding: 100px 0 50px 0;
         background-color: white;
+        border: 1px solid black;
+        text-align: center;
+        }
+        #signup{
+            margin: 100px auto;
+            padding:5px;
         }
 
-        /* Full-width input fields */
-        
-        /* Set a style for the submit/login button */
         .form-container .btn {
-        background-color: #04AA6D;
+        background-color: #9dce51;
         color: white;
-        padding: 16px 20px;
+        padding: 16px 5px;
         border: none;
         cursor: pointer;
-        width: 100%;
-        margin-bottom:10px;
+        width: 95%;
+        margin-bottom:2px;
         }
         
         h3{
-            margin:30px;
+            margin-top:-60px;
             /* margin:auto; */
             color:#9dce51;
             text-align: center;
@@ -70,6 +46,7 @@
             text-align: left;
         }
         #email {
+            width:95%;
             padding-top: -5px;
             border:none;
             padding-bottom:3px;
@@ -83,6 +60,7 @@
         }
         #hrLine_last {
             margin-bottom: 60px;
+            width:98%;
         }
         #name_parent {
             display:flex;
@@ -95,41 +73,71 @@
         }
         .name_child > input {
             border:none;
-            width:90%;
+            width:98%;
         }
     </style>
+    </style>
 </head>
-    <body>
-        <button class="open-button" onclick="openForm()">Login/Signup</button>
-            <!-- The form -->
-        <div class="form-popup" id="myForm">
-            <form action="signup.html" class="form-container">  
-                <h3>Almost There</h3>
-                <p id="to_know_better">Help us to know you better!</p>
-                <div id="name_parent">
-                    <div class="name_child">
-                        <p>First Name</p>
-                        <input id="first_name" type="text" name="f_name" required>
-                        <hr id="hrLine">
-                    </div>
-                    <div class="name_child">
-                        <p>Last Name</p>
-                        <input id="last_name" type="text" name="l_name" required>
-                        <hr id="hrLine">
-                    </div>
+<body>
+    <main>
+        <div id="signup">
+          <form class="form-container">  
+            <h3>Almost There</h3>
+            <p id="to_know_better">Help us to know you better!</p>
+            <div id="name_parent">
+                <div class="name_child">
+                    <p>First Name</p>
+                    <input id="first_name" type="text" name="f_name" required>
+                    <hr id="hrLine">
                 </div>
-                <p>Email</p>
-                <input id="email" type="text" name="email"  required>
-                <hr id="hrLine_last">
-    
-                <button type="submit" class="btn">Start Shopping</button>
-            </form>
-        </div>
-    </body>
-</html>
+                <div class="name_child">
+                    <p>Last Name</p>
+                    <input id="last_name" type="text" name="l_name" required>
+                    <hr id="hrLine">
+                </div>
+            </div>
+            <p>Email</p>
+            <input id="email" type="text" name="email"  required>
+            <hr id="hrLine_last">
 
+            <input type="submit" class="btn" value="Start Shopping" />
+         </form>
+        </div>
+      </main>
+</body>
+</html>
 <script>
-    function openForm() {
-        document.getElementById("myForm").style.display = "block";
-    }
+    const form = document.querySelector('form');
+    // Saving data on localstorage
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        var first_name = document.querySelector('#first_name').value;
+        var last_name = document.querySelector('#last_name').value;
+        var email = document.querySelector('#email').value;
+    
+        let creds = JSON.parse(localStorage.getItem('Creds'));
+
+        if (creds === null) {
+            creds = [];
+        }
+
+        const newcreds = {
+            first_name:first_name,
+            last_name: last_name,
+            email: email,
+        };
+
+        creds.push(newcreds); // Push newcreds object into creds array
+
+    //name for home
+    var str=localStorage.getItem('name1');
+    localStorage.setItem("name1",name);
+    console.log(str);
+
+    localStorage.setItem('creds', JSON.stringify(creds));
+    
+    window.location.href = "home.html"
+
+    });
 </script>

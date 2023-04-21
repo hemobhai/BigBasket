@@ -4,47 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>login & signin</title>
     <style>
-
-
-        /* Button used to open the contact form - fixed at the bottom of the page */
-        .open-button {
-        color: black;
-        padding: 5px 10px;
-        border: none;
-        cursor: pointer;
-        opacity: 0.8;
-        position: top;
-        bottom: 23px;
-        right: 28px;
-        width: 280px;
-        }
-        .open-button:hover {
-            color:rgba(24, 108, 24, 0.832);
-        }
-
-        /* The popup form - hidden by default */
-        .form-popup {
-        display: none;
-        position: center;
-        bottom: 0;
-        right: 15px;
-        border: none;
-        }
-
         .form-container {
         margin:auto;
         max-width: 300px;
         padding: 100px 0 50px 0;
         background-color: white;
+        border: 1px solid black;
+        text-align: center;
         }
-
-        /* Full-width input fields */
-        
-        /* Set a style for the submit/login button */
-        .form-container .btn {
-        background-color: #04AA6D;
+        #signin{
+            margin: 100px auto;
+            padding:5px;
+        }
+        #btn {
+        background-color: #9dce51;
         color: white;
         padding: 16px 20px;
         border: none;
@@ -52,59 +27,98 @@
         width: 100%;
         margin-bottom:10px;
         }
-        
-        h3{
-            margin:40px;
-            /* margin:auto; */
+        h3{ 
+            margin-top:-60px;
             color:#9dce51;
             text-align: center;
         }
         p {
             color:grey;
         }
-        #email_login_btn {
-        padding: 16px 20px;
-        border: 2px;
-        border-color: black;
-        width: 100%;
-        margin-bottom:10px; 
+        .email_login_btn {
+            font-weight: bold;
+            background-color: white;
+            display: inline-block;
+            padding: 16px 20px;
+            border: 1px solid black;
+            width: 85%;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
         }
         #mobile_number{
             border:none;
+            width:90%;
             padding:5px 15px 5px 15px;
+            text-align: center;
+            background-color: white;
         }
         #hrLine {
+            margin-top:-5px;
             margin-bottom: 100px;
+        }
+        #last_p_tag {
+            text-align: center;
         }
     </style>
 </head>
-    <body>
-        <button class="open-button" onclick="openForm()">Login/Signup</button>
-
-    <!-- The form -->
-        <div class="form-popup" id="myForm">
-        <form action="otp.html" class="form-container">
-            <h3>LOGIN/SIGNUP</h3>
-
-            <p>Enter Mobile Number(10-Digit)</p>
-            <input id="mobile_number" type="text" name="mobile" required>
+<body>
+    <main>
+        <div id="signin">
+          <form id="mobile_login_form" class="form-container">
+            <h3>LOGIN/SIGN UP</h3>
+            <p>Enter Mobile Number(10-Digit)<p>
+            <input type="mobile" id="mobile_number" required />
             <hr id="hrLine">
-
-            <button id="email_login_btn">Login using Email Address</button>
-
-            <button type="submit" class="btn">Continue</button>
-            <p>By Continuing, I accept TCP- Bigbasket's <span style:color="blue"Terms and Conditions</span> and <span color="blue">Privacy Policy</span></p>
-        </form>
+           
+            <a href="login_using_email.html" class="email_login_btn">Login using Email Address</a>
+           
+            <a href="otp.html"><input id="btn" type="submit" value="Continue" /></a>
+            <p id="last_p_tag">By Continuing, I accept TCP- Bigbasket's <span style=color:blue;>Terms and Conditions</span> and <span style=color:blue;>Privacy Policy</span></p>
+          </form>
         </div>
-    </body>
+    </main>
+</body>
 </html>
-
 <script>
-        function openForm() {
-    document.getElementById("myForm").style.display = "block";
+
+    document.getElementById("mobile_login_form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+        var inputValue = document.getElementById("mobile_number").value;
+        localStorage.setItem("mobile_2", inputValue);
+        window.location.href = "otp.html"; // Redirect to otp.html
+    });
+
+// ############### this code is for store the data in existing local storage ########
+
+    // Retrieve the existing JSON string from local storage
+    let existingData = localStorage.getItem('creds');
+
+    // If 'creds' key does not exist in local storage, initialize it with an empty object
+    if (!existingData) {
+        localStorage.setItem('creds', JSON.stringify({}));
     }
 
-    function closeForm() {
-    document.getElementById("myForm").style.display = "center";
-    }
+    const mobile_login_form = document.querySelector('#mobile_login_form');
+    
+    mobile_login_form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        var mobile_number = document.querySelector('#mobile_number').value;
+
+        // Validate the mobile number (e.g. check for valid format)
+
+        // Retrieve the existing JSON string from local storage
+        let existingData = localStorage.getItem('creds');
+
+        // Parse the retrieved JSON string into a JavaScript object
+        let creds = JSON.parse(existingData);
+
+        // Add new data to the JavaScript object
+        creds.name = mobile_number;
+
+        // Store the updated JavaScript object back to local storage
+        localStorage.setItem('creds', JSON.stringify(creds));
+    });
 </script>
