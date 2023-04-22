@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/af8ea8be52.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        #main{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            width:80%;
+            margin:auto;
+            background-color: antiquewhite;
+        }
+        #left{
+            width: 20%; 
+            
+        }
+        #right{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            width: 80%; 
+        }
+        #mid{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            justify-content: space-between;
+            height:fit-content
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="left">
+            <h2>Brand</h2>
+            <input type="checkbox" id="bb Combo" name="bb Combo" value="bb Combo" onchange="fnbbCombo()">
+            <label for="bb Combo"> bb Combo</label>
+            <br>
+            <input type="checkbox" id="Fresho" name="Fresho" value="Fresho" onchange="fnFresho()">
+            <label for="Fresho"> Fresho</label>
+            <br>
+            <input type="checkbox" id="Hoovu Fresh" name="Hoovu Fresh" value="Hoovu Fresh" onchange="fnHoovuFresh()">
+            <label for="Hoovu Fresh"> Hoovu Fresh</label>
+            <br>
+            <input type="checkbox" id="On1y" name="On1y" value="On1y" onchange="fnOn1y()">
+            <label for="On1y">On1y</label>
+            <br>
+            <input type="checkbox" id="Organic" name="Organic" value="Organic">
+            <label for="Organic"> Organic</label>
+            <br>
+            <input type="checkbox" id="Shades of Spring" name="Shades of Spring" value="Shades of Spring">
+            <label for="Shades of Spring"> Shades of Spring</label>
+            <br>
+            <input type="checkbox" id="Trikaya" name="Trikaya" value="Trikaya">
+            <label for="Trikaya">Trikaya</label>
+            <br>
+            <h2>Price</h2>
+            <input type="checkbox" id="Less than Rs 20" name="Less than Rs 20" value="Less than Rs 20" onchange="fnls20()">
+            <label for="Less than Rs 20 "> Less than Rs 20 </label>
+            <br>
+            <input type="checkbox" id="Rs 21 to Rs 50" name="Rs 21 to Rs 50" value="Rs 21 to Rs 50" onchange="fnls2150()">
+            <label for="Rs 21 to Rs 50"> Rs 21 to Rs 50</label>
+            <br>
+            <input type="checkbox" id="Rs 51 to Rs 100" name="HRs 51 to Rs 100 " value="Rs 51 to Rs 100" onchange="fnls51100()">
+            <label for="Rs 51 to Rs 100"> Rs 51 to Rs 100</label>
+            <br>
+            <input type="checkbox" id="Rs 101 to Rs 200" name="Rs 101 to Rs 200" value="Rs 101 to Rs 200" onchange="fnls101200()">
+            <label for="Rs 101 to Rs 200">Rs 101 to Rs 200</label>
+            <br>
+            <input type="checkbox" id="Rs 201 to Rs 500" name="Rs 201 to Rs 500" value="Rs 201 to Rs 500" onchange="fnls201500()">
+            <label for="Rs 201 to Rs 500"> Rs 201 to Rs 500</label>
+            <br>
+            <input type="checkbox" id="More than Rs 501" name="More than Rs 501" value="More than Rs 501" onchange="fnls501()">
+            <label for="More than Rs 501">More than Rs 501</label>
+        </div>
+        <div id="mid">
+        <h2>Fruits & Vegetables</h2>
+            <select name="sort" id="sort" onchange="fnSort()">
+                <option value="all">All</option>
+                <option value="Pl2h">Price - Low to High</option>
+                <option value="Ph2l">Price - High to Low</option>
+              </select>
+        </div>
+        <div id="right">
+            
+            <!-- <p>MRP: <span id="before"></span><span id="after"></span></p>
+            <p>Standard Delivery: Today 2:00PM - 9:30PM</p>
+            <div id="last"></div>
+            <div>
+                <span>Qty</span>
+                <input type="number">
+            </div>
+            <button style="background-color: linear-gradient(rgb(254, 230, 124) 0px, rgb(242, 203, 118));margin-left: 4px;
+            height: 22px;
+            color: #414042;
+            font: 13px ProximaNovaA-Regular;
+            display: inline-block;
+            line-height: 1.7;">ADD <span><i class="fa-sharp fa-solid fa-basket-shopping-simple"></i></span></button> -->
+           
+        </div>
+    </div>
+</body>
+
+<script>
+    
+    var arr=[
+        {
+           "img": "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           "brand":"bb Combo",
+           "name" : "Onion (Loose)",
+           "fullMrp" : "Rs: 151.32",
+           "mrp": "51"           
+           
+        },
+        {
+           "img": "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           "brand":"bb Combo",
+           "name" : "Onion (Loose)",
+           "fullMrp" : "Rs: 151.32",
+           "mrp": "51"           
+           
+        },
+        {
+           "img": "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           "brand":"bb Combo",
+           "name" : "Onion (Loose)",
+           "fullMrp" : "Rs: 151.32",
+           "mrp": "51"           
+           
+        },
+        {
+           "img": "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           "brand":"bb Combo",
+           "name" : "Onion (Loose)",
+           "fullMrp" : "Rs: 151.32",
+           "mrp": "51"           
+           
+        },
+        {
+           "img": "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           "brand":"bb Combo",
+           "name" : "Onion (Loose)",
+           "fullMrp" : "Rs: 151.32",
+           "mrp": "51"           
+           
+        },
+        {
+           "img": "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           "brand":"Fresho",
+           "name" : "Onion (Loose)",
+           "fullMrp" : "Rs: 151.32",
+           "mrp": "501"           
+           
+        },{
+           "img": "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           "brand":"Fresho",
+           "name" : "Onion (Loose)",
+           "fullMrp" : "Rs: 151.32",
+           "mrp": "501"           
+           
+        },
+        {
+           "img": "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           "brand":"Fresho",
+           "name" : "Onion (Loose)",
+           "fullMrp" : "Rs: 151.32",
+           "mrp": "501"           
+           
+        },
+        {
+           "img": "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           "brand":"Fresho",
+           "name" : "Onion (Loose)",
+           "fullMrp" : "Rs: 151.32",
+           "mrp": "501"           
+           
+        },
+        {
+           "img": "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           "brand":"Fresho",
+           "name" : "Onion (Loose)",
+           "fullMrp" : "Rs: 151.32",
+           "mrp": "501"           
+        },
+        {
+           "img": "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           "brand":"Fresho",
+           "name" : "Onion (Loose)",
+           "fullMrp" : "Rs: 151.32",
+           "mrp": "201"           
+        },
+        {
+           "img": "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           "brand":"Hoovu Fresh",
+           "name" : "Onion (Loose)",
+           "fullMrp" : "Rs: 151.32",
+           "mrp": "201"           
+        },
+        {
+           "img": "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           "brand":"Hoovu Fresh",
+           "name" : "Onion (Loose)",
+           "fullMrp" : "Rs: 151.32",
+           "mrp": "201"
+           
+        },
+        {
+           "img": "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           "brand":"Hoovu Fresh",
+           "name" : "Onion (Loose)",
+           "fullMrp" : "Rs: 151.32",
+           "mrp": "201"
+           
+        },
+        {
+           "img": "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           "brand":"Hoovu Fresh",
+           "name" : "Onion (Loose)",
+           "fullMrp" : "Rs: 151.32",
+           "mrp": "115"
+           
+        },
+        {
+           "img": "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           "brand":"Hoovu Fresh",
+           "name" : "Onion (Loose)",
+           "fullMrp" : "Rs: 151.32",
+           "mrp": "115"
+           
+        },
+        {
+           "img": "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           "brand":"On1y",
+           "name" : "Onion (Loose)",
+           "fullMrp" : "Rs: 151.32",
+           "mrp": "115"
+           
+        },
+        {
+           "img": "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           "brand":"On1y",
+           "name" : "Onion (Loose)",
+           "fullMrp" : "Rs: 151.32",
+           "mrp": "115"
+           
+        },
+        {
+           "img": "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           "brand":"On1y",
+           "name" : "Onion (Loose)",
+           "fullMrp" : "Rs: 151.32",
+           "mrp": "115"
+           
+        },
+        {
+           "img": "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+           "brand":"On1y",
+           "name" : "Onion (Loose)",
+           "fullMrp" : "Rs: 151.32",
+           "mrp": "115"
+           
+        }
+    ];
+    function fnbbCombo(){
+        var a=arr.filter(function(ele){
+            return ele.brand==="bb Combo";
+        });
+        
+        console.log(a);
+        display(a);
+    };
+    function fnFresho(){
+        var a=arr.filter(function(ele){
+            return ele.brand==="Fresho";
+        });
+        
+        console.log(a);
+        display(a);
+    };
+    function fnHoovuFresh(){
+        var a=arr.filter(function(ele){
+            return ele.brand==="Hoovu Fresh";
+        });
+        
+        console.log(a);
+        display(a);
+    };
+    function fnOn1y(){
+        var a=arr.filter(function(ele){
+            return ele.brand==="On1y";
+        });
+       
+        console.log(a);
+        display(a);
+    };
+    function fnls20(){
+        var a=arr.filter(function(ele){
+            return ele.mrp>0 && ele.mrp<=20;
+        });
+        
+        console.log(a);
+        display(a);
+    };
+    function fnls2150(){
+        var a=arr.filter(function(ele){
+            return ele.mrp>20 && ele.mrp<=50;
+        });
+        
+        console.log(a);
+        display(a);
+    };
+    function fnls51100(){
+        var a=arr.filter(function(ele){
+            return ele.mrp>50 && ele.mrp<=100;
+        });
+        
+        console.log(a);
+        display(a);
+    };
+    function fnls101200(){
+        var a=arr.filter(function(ele){
+            return ele.mrp>100 && ele.mrp<=200;
+        });
+        
+        console.log(a);
+        display(a);
+    };
+    function fnls201500(){
+        var a=arr.filter(function(ele){
+            return ele.mrp>200 && ele.mrp<=500;
+        });
+        
+        console.log(a);
+        display(a);
+    };
+    function fnls501(){
+        var a=arr.filter(function(ele){
+            return ele.mrp>500;
+        });
+        
+        console.log(a);
+        display(a);
+    };
+    
+    display(arr);
+    function display(arr){
+    arr.map(function(elem){
+        var divp=document.createElement("div");
+        
+        var divDetails=document.createElement("div");
+
+        divp.append(divImg,divDetails);
+
+
+        var divImg=document.createElement("div");
+        var img=document.createElement("img");
+        img.setAttribute("src",elem.img);
+        divImg.append(img);
+        
+        var name=document.createElement("p");
+        name.innerText=elem.name;
+
+        var mrp=document.createElement("p");
+        mrp.innerText="115";
+
+        var delivery=document.createElement("p");
+        delivery.innerText="Standard Delivery: Today 2:00PM - 9:30PM";
+
+        var divQty=document.createElement("div");
+        
+        var spanQty=document.createElement("span");
+        spanQty.innerText="Qty";
+
+        var inputQty=document.createElement("input");
+
+        divQty.append(spanQty,inputQty);
+
+        var cartBtn=document.createElement("button");
+
+        divDetails.append(name,mrp,delivery,divQty,cartBtn);
+
+        divp.append(divImg,divDetails);
+        
+        document.getElementById("right").append(divp);
+
+    });
+    
+}
+</script>
+</html>
