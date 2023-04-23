@@ -849,110 +849,182 @@
 
 </html>
 <script>
-    var arr = [
+    var arrFruitandAll = [
         {
-            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-            brand: "bb Combo",
-            name: "Onion (Loose)",
-            strickprice: 151.32,
-            mrp: 120,
-        },
-        {
-            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-            brand: "bb Combo",
-            name: "Onion (Loose)",
-            strickprice: 151.32,
-            mrp: 120,
-        },
-        {
-            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-            brand: "bb Combo",
-            name: "Onion (Loose)",
-            strickprice: 151.32,
-            mrp: 120,
-        },
-        {
-            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-            brand: "bb Combo",
-            name: "Onion (Loose)",
-            strickprice: 151.32,
-            mrp: 120,
-        },
-        {
-            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-            brand: "bb Combo",
-            name: "Onion (Loose)",
-            strickprice: 151.32,
-            mrp: 120,
-        },
-        {
-            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-            brand: "bb Combo",
-            name: "Onion (Loose)",
-            strickprice: 151.32,
-            mrp: 120,
-        },
-        {
-            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-            brand: "bb Combo",
-            name: "Onion (Loose)",
-            strickprice: 151.32,
-            mrp: 120,
-        },
-        {
-            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-            brand: "bb Combo",
-            name: "Onion (Loose)",
-            strickprice: 151.32,
-            mrp: 120,
-        },
-        {
-            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-            brand: "bb Combo",
-            name: "Onion (Loose)",
-            strickprice: 151.32,
-            mrp: 120,
-        },
-        {
-            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+            img_url: "https://www.bigbasket.com/media/uploads/p/m/10000203_16-fresho-tomato-local.jpg?tr=w-1920,q=80",
             brand: "Fresho",
-            name: "Onion (Loose)",
+            name: "Tomato (Loose)",
+            strickprice: 30.26,
+            mrp: 22.5,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/m/30001006_8-fresho-alphonso-mango-ratnagiri.jpg?tr=w-1920,q=80",
+            brand:  "Fresho",
+            name: "Mango Ratnagiri",
+            strickprice: 822.37,
+            mrp: 625,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/m/10000207_24-fresho-watermelon-small.jpg?tr=w-1920,q=80",
+            brand:  "Fresho",
+            name: "Watermelon - Small",
+            strickprice: 65.79,
+            mrp: 50,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/m/10000142_16-fresho-ladies-finger.jpg?tr=w-1920,q=80g",
+            brand:  "Fresho",
+            name: "Ladies Finger(Loose)",
+            strickprice: 65.79,
+            mrp: 50,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/m/10000025_27-fresho-banana-robusta.jpg?tr=w-1920,q=80",
+            brand:  "bb Combo",
+            name: "Banana - Robusta",
+            strickprice: 67.11,
+            mrp: 51,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/m/40033819_29-fresho-apple-shimla.jpg?tr=w-1920,q=80",
+            brand: "bb Combo",
+            name: "Apple - Shimla",
+            strickprice: 169.74,
+            mrp: 129,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/m/10000273_16-fresho-mushrooms-button.jpg?tr=w-1920,q=80",
+            brand: "bb Combo",
+            name: "Mushroom - Button",
+            strickprice: 73.68,
+            mrp: 49,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/m/10000066_25-fresho-cabbage.jpg?tr=w-1920,q=80",
+            brand: "bb Combo",
+            name: "Cabbage",
+            strickprice: 31.58,
+            mrp: 24,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/m/20000732_11-fresho-lemon.jpg?tr=w-1920,q=80",
+            brand: "Hoovu Fresh",
+            name: "Lemon(Loose)",
+            strickprice: 77.63,
+            mrp: 49,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/m/10000063_20-fresho-broccoli.jpg?tr=w-1920,q=80",
+            brand:"Hoovu Fresh",
+            name: "Broccoli",
+            strickprice: 94.74,
+            mrp: 72,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/m/10000067_23-fresho-capsicum-green.jpg?tr=w-1920,q=80",
+            brand:"Hoovu Fresh",
+            name: "Capsicum - Green(Loose)",
             strickprice: 151.32,
             mrp: 120,
         },
         {
-            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-            brand: "Fresho",
-            name: "Onion (Loose)",
-            strickprice: 151.32,
-            mrp: 120,
+            img_url: "https://www.bigbasket.com/media/uploads/p/m/10000588_12-fresho-raw-mango.jpg?tr=w-1920,q=80",
+            brand: "Hoovu Fresh",
+            name: "Raw Mango(Loose)",
+            strickprice: 72.33,
+            mrp: 52,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/m/10000338_13-fresho-ginger.jpg?tr=w-1920,q=80",
+            brand: "Organic",
+            name: "Ginger (Loose)",
+            strickprice: 294.74,
+            mrp: 101.50,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/m/10000668_12-fresho-cucumber-english.jpg?tr=w-1920,q=80",
+            brand: "Organic",
+            name: "Cucumber - English(Loose)",
+            strickprice: 84.71,
+            mrp: 64,
+        }, 
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/m/30009286_7-fresho-blueberry.jpg?tr=w-1920,q=80",
+            brand: "Organic",
+            name: "Blueberry(Loose)",
+            strickprice: 235.10,
+            mrp: 179,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/m/10000048_21-fresho-bitter-gourd.jpg?tr=w-1920,q=80",
+            brand: "Organic",
+            name: "Bitter Gourd(Loose)",
+            strickprice: 84.21,
+            mrp: 64,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/m/20000705_10-fresho-brinjal-purple-long.jpg?tr=w-1920,q=80",
+            brand: "Shades of Spring",
+            name: "Brinjal Purple,Long(Loose)",
+            strickprice: 84.21,
+            mrp: 64,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/m/10000036_20-fresho-beans-broad.jpg?tr=w-1920,q=80",
+            brand: "Shades of Spring",
+            name: "Beans Broad",
+            strickprice: 89.47,
+            mrp: 68,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/m/10000175_15-fresho-ridge-gourd.jpg?tr=w-1920,q=80",
+            brand: "Shades of Spring",
+            name: "Ridge Gourd",
+            strickprice: 84.21,
+            mrp: 64,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/m/40205742_1-fresho-cauliflower-small.jpg?tr=w-1920,q=80",
+            brand:"Shades of Spring",
+            name: "Cauliflower - Small",
+            strickprice: 100,
+            mrp: 83,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/m/10000141_25-fresho-muskmelon-netted-small.jpg?tr=w-1920,q=80",
+            brand:"Trikaya",
+            name: "Muskmelon - Netted Small",
+            strickprice: 120,
+            mrp: 90,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/m/10000093_16-fresho-coconut-medium.jpg?tr=w-1920,q=80",
+            brand:"Trikaya",
+            name: "Coconut - Medium",
+            strickprice: 38.16,
+            mrp: 29,
+        },
+        {
+            img_url: "https://www.bigbasket.com/media/uploads/p/m/10000045_18-fresho-beetroot.jpg?tr=w-1920,q=80",
+            brand:"Trikaya",
+            name: "Beetroot(Loose)",
+            strickprice: 39.47,
+            mrp: 30,
         },
         {
             img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-            brand: "Fresho",
-            name: "Onion (Loose)",
-            strickprice: 151.32,
-            mrp: 120,
-        },
-        {
-            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-            brand: "Fresho",
-            name: "Onion (Loose)",
-            strickprice: 151.32,
-            mrp: 120,
-        },
-        {
-            img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-            brand: "Fresho",
+            brand:"Trikaya",
             name: "Onion (Loose)",
             strickprice: 151.32,
             mrp: 120,
         },
 
     ];
-    display(arr);
-    function display(arr){
-    arr.map(function (elem) {
+
+
+    display(arrFruitandAll);
+    function display(arrFruitandAll){
+        arrFruitandAll.map(function (elem,idx) {
         var div = document.createElement("div");
 
         var image = document.createElement("img");
@@ -982,17 +1054,23 @@
         delivery.innerText = "Standard Delivery: Today 2:00PM - 9:30PM";
 
         var divCartqty_parent = document.createElement("div");
-        divCartqty_parent.setAttribute("id", "crtqty")
+        divCartqty_parent.setAttribute("id", "crtqty");
 
         var divQty_child1 = document.createElement("div");
-        divQty_child1.setAttribute("id", "qty")
+        divQty_child1.setAttribute("id", "qty");
 
         var spanQty = document.createElement("span");
         spanQty.innerText = "Qty";
 
         var inputQty = document.createElement("input");
         inputQty.setAttribute("placeholder", "Per Kg");
-        inputQty.setAttribute("id", "quantityIp");
+        // inputQty.setAttribute("value", 1);
+        inputQty.setAttribute("id", "quantityIp"+idx);
+        
+        
+        
+        
+
 
         
 
@@ -1002,13 +1080,16 @@
 
         var cartBtn = document.createElement("button");
         cartBtn.innerHTML = '<i class="fa-solid fa-basket-shopping"></i>' + " Cart";
-        cartBtn.addEventListener("click",function(){
-            fnAddToCart(elem);
-        });
+       
 
 
         divQty_child1.append(spanQty, inputQty);
-        divQty_child2.append(cartBtn)
+        divQty_child2.append(cartBtn);
+
+        
+        cartBtn.addEventListener("click",function(){
+            fnAddToCart(elem,idx);
+        });
         divCartqty_parent.append(divQty_child1, divQty_child2);
         priceBox.append(j_mrp, strickprice, mrp);
         div.append(image, brand, name, priceBox, delivery, divCartqty_parent);
@@ -1016,18 +1097,21 @@
     });
 }   
      var cartArr=JSON.parse(localStorage.getItem("cartList")) || [];
-    function fnAddToCart(elem){
+    function fnAddToCart(elem,idx){
+        
+        var val=Number.parseInt(document.getElementById("quantityIp"+idx).value) || 1;
         // var cartArr=JSON.parse(localStorage.getItem("cartList")) || [];
-        var val=document.getElementById("quantityIp").value;
+
+        
+        
+        
         var ele={
             image_url:elem.img_url,
             name:elem.name,
             strickprice:elem.strickprice,
             mrp:elem.mrp,
-            perKg:val
-
-            
-        }
+            perKg:val        
+};
         console.log(ele);
 
         cartArr.push(ele);
@@ -1037,84 +1121,133 @@
 
     function fnbbCombo() {
 
-        var a = arr.filter(function (ele) {
+        var a = arrFruitandAll.filter(function (ele) {
             return ele.brand === "bb Combo";
         });
         console.log(a);
+        document.getElementById("parent").innerHTML="";
         display(a);
     };
     function fnFresho() {
 
-        var a = arr.filter(function (ele) {
+        var a = arrFruitandAll.filter(function (ele) {
             return ele.brand === "Fresho";
         });
 
         console.log(a);
+        document.getElementById("parent").innerHTML="";
         display(a);
     };
     function fnHoovuFresh() {
-        var a = arr.filter(function (ele) {
+        var a = arrFruitandAll.filter(function (ele) {
             return ele.brand === "Hoovu Fresh";
         });
         event,target.parentNode.remove();
         console.log(a);
+        document.getElementById("parent").innerHTML="";
         display(a);
     };
     function fnOn1y() {
-        var a = arr.filter(function (ele) {
+        var a = arrFruitandAll.filter(function (ele) {
             return ele.brand === "On1y";
         });
 
         console.log(a);
+        document.getElementById("parent").innerHTML="";
         display(a);
     };
     function fnls20() {
-        var a = arr.filter(function (ele) {
+        var a = arrFruitandAll.filter(function (ele) {
             return ele.mrp > 0 && ele.mrp <= 20;
         });
 
         console.log(a);
+        document.getElementById("parent").innerHTML="";
         display(a);
     };
     function fnls2150() {
-        var a = arr.filter(function (ele) {
+        var a = arrFruitandAll.filter(function (ele) {
             return ele.mrp > 20 && ele.mrp <= 50;
         });
 
         console.log(a);
+        document.getElementById("parent").innerHTML="";
         display(a);
     };
     function fnls51100() {
-        var a = arr.filter(function (ele) {
+        var a = arrFruitandAll.filter(function (ele) {
             return ele.mrp > 50 && ele.mrp <= 100;
         });
 
         console.log(a);
+        document.getElementById("parent").innerHTML="";
         display(a);
     };
     function fnls101200() {
-        var a = arr.filter(function (ele) {
+        var a = arrFruitandAll.filter(function (ele) {
             return ele.mrp > 100 && ele.mrp <= 200;
         });
 
         console.log(a);
+        document.getElementById("parent").innerHTML="";
         display(a);
     };
     function fnls201500() {
-        var a = arr.filter(function (ele) {
+        var a = arrFruitandAll.filter(function (ele) {
             return ele.mrp > 200 && ele.mrp <= 500;
         });
 
         console.log(a);
+        document.getElementById("parent").innerHTML="";
         display(a);
     };
     function fnls501() {
-        var a = arr.filter(function (ele) {
+        var a = arrFruitandAll.filter(function (ele) {
             return ele.mrp > 500;
         });
 
         console.log(a);
+        document.getElementById("parent").innerHTML="";
         display(a);
     };
+
+    function fnSort(){
+        var val=document.getElementById("sort").value;
+       
+        if(val==="all"){        
+
+             document.getElementById("parent").innerHTML="";
+             display(arrFruitandAll);
+        }else if(val==="Pl2h"){
+            document.getElementById("parent").innerHTML="";
+            var a=[];
+            arrFruitandAll.map(function(elem){
+                a.push(elem);
+             });
+            a.sort(function(a,b){
+                if(a.mrp>b.mrp)
+                    return 1;
+                if(a.mrp<b.mrp)
+                    return -1;
+                return 0;
+
+            });
+            display(a);
+        }else{
+            document.getElementById("parent").innerHTML="";
+            var a=[];
+            arrFruitandAll.map(function(elem){
+                a.push(elem);
+             });
+            a.sort(function(a,b){
+                if(a.mrp>b.mrp)
+                    return -1;
+                if(a.mrp<b.mrp)
+                    return 1;
+                return 0;
+            });
+            display(a);
+        }
+    }
 
 </script>
