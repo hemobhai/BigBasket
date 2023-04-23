@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://kit.fontawesome.com/c3011d6d48.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <title>Big Basket</title>
   <style>
     body {
@@ -524,7 +526,7 @@
     }
 
 
-    /* mobilenavbar start */
+    /* mobilenavbar CSS start */
 
 
     nav {
@@ -596,7 +598,177 @@
       font-size: 20px;
     }
 
-    /* mobilenavbar end */
+    /* mobilenavbar CSS end */
+
+
+    /* Product Crosel start */
+
+
+
+    #godfather {
+      width: 80%;
+      margin: auto;
+      position: relative;
+    }
+
+    #godfather>h2 {
+      text-align: center;
+    }
+
+    .left {
+      position: absolute;
+      left: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .right {
+      position: absolute;
+      right: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+
+    .arrow {
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 5px;
+    }
+
+    .right1 {
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
+
+    .left1 {
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+    }
+
+    #parent {
+      /* display: grid;
+      grid-template-columns: repeat(4, 1fr);*/
+
+
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      /* gap: 20px; */
+      /* scroll-snap-type: x mandatory; */
+      -webkit-overflow-scrolling: touch;
+      align-items: center;
+      /* Add this property */
+      /* margin: 20px 0; */
+    }
+
+    #parent::-webkit-scrollbar {
+      -webkit-appearance: none;
+    }
+
+    /* #parent::-webkit-scrollbar-thumb {
+      background-color: black;
+    } */
+
+    #parent>div {
+      flex: 0 0 auto;
+      width: 22%;
+      overflow: hidden;
+      margin: 20px;
+      /* scroll-snap-align: start; */
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      padding: 20px;
+    }
+
+    #parent>div:hover {
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+
+    #parent>div>div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 3px;
+      margin-bottom: -10px;
+      background-color: #f4f3f2;
+      padding: 5px;
+    }
+
+    #parent>div>img {
+      width: 100%;
+    }
+
+    #parent>div>div>h4:nth-child(2) {
+      text-decoration: line-through;
+      font-size: 11px;
+    }
+
+    #parent>div>div>p {
+      font-size: 10px;
+    }
+
+    #parent>div>div>h4 {
+      font-weight: 200;
+      font-size: 15px;
+    }
+
+    #parent>#crtqty {
+      display: flex;
+      flex-direction: row;
+      margin-top: 10px;
+    }
+
+    #crtqty {
+      padding-bottom: 15px;
+    }
+
+    #cart>button {
+      background-color: #f5d177;
+      border: none;
+      padding: 4px 9px;
+      border-radius: 5px;
+    }
+
+    #cart>button:hover {
+      background-color: #ebb326;
+    }
+
+    #qty>input {
+      width: 52%;
+      margin-left: 6px;
+    }
+
+    #parent>#qty {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    #crtqty>div {
+      width: 50%;
+    }
+
+    #parent>div>p {
+      font-size: 13px;
+      margin: 5px 0;
+    }
+
+    #parent>div>p:nth-child(5) {
+      background: #f4f3f2;
+      margin: 0;
+      padding: 5px;
+    }
+
+    #parent>div>h3,
+    h4 {
+      margin: 5px 0;
+    }
+
+    /* Product Crosel End */
 
     /* large screens */
 
@@ -612,9 +784,18 @@
     @media all and (min-width: 1024px) and (max-width: 1439px) {
 
       /* write code here */
+
+      /* parent product css start */
+
+      #parent>div {
+        width: 28%;
+      }
+      /* parent product css end */
+
       nav {
         display: none;
       }
+
 
       /* Navbar CSS Start */
       #childmid1 {
@@ -697,6 +878,13 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      /* Parent product start */
+
+      #parent>div {
+        width: 44%;
+      }
+
+      /* Parent product end */
 
       /* <!-- Offers & Popular & Top CSS Start --> */
       .off_pop {
@@ -747,6 +935,10 @@
       }
 
       #navbox {
+        display: none;
+      }
+
+      #godfather {
         display: none;
       }
 
@@ -1044,6 +1236,18 @@
 
   </div>
   <!-- Miniboxes End-->
+
+
+  <!-- Parent products Start -->
+  <div id="godfather">
+    <h2>Best Seller</h2>
+    <hr>
+    <p class="left" onclick="leftScroll()"><i class="arrow left1"></i></p>
+    <div id="parent"></div>
+    <p class="right" onclick="rightScroll()"><i class="arrow right1"></i></p>
+  </div>
+
+  <!-- Parent products End -->
 
   <!-- Bank_Offers Start -->
 
@@ -1486,22 +1690,27 @@
       products and hundreds of branded items could be handpicked and delivered to your home, all at the click of a
       button? India's first comprehensive online megastore, bigbasket.com, brings a whopping 20000+ products with more
       than 1000 brands, to over 4 million happy customers. From household cleaning products to beauty and makeup,
-      bigbasket has everything you need for your daily needs. bigbasket.com is convenience personified We've taken away
+      bigbasket has everything you need for your daily needs. bigbasket.com is convenience personified We've taken
+      away
       all the stress associated with shopping for daily essentials, and you can now order all your household products
-      and even buy groceries online without travelling long distances or standing in serpentine queues. Add to this the
-      convenience of finding all your requirements at one single source, along with great savings, and you will realize
+      and even buy groceries online without travelling long distances or standing in serpentine queues. Add to this
+      the
+      convenience of finding all your requirements at one single source, along with great savings, and you will
+      realize
       that bigbasket- India's largest online supermarket, has revolutionized the way India shops for groceries. Online
       grocery shopping has never been easier. Need things fresh? Whether it's fruits and vegetables or dairy and meat,
       we have this covered as well! Get fresh eggs, meat, fish and more online at your convenience. Hassle-free Home
       Delivery options</p>
-    <p>We deliver to 25 cities across India and maintain excellent delivery times, ensuring that all your products from
+    <p>We deliver to 25 cities across India and maintain excellent delivery times, ensuring that all your products
+      from
       groceries to snacks branded foods reach you in time.</p>
     <ul>
       <li>Slotted Delivery: Pick the most convenient delivery slot to have your grocery delivered. From early morning
         delivery for early birds, to late-night delivery for people who work the late shift, bigbasket caters to every
         schedule.</li>
       <li>Express Delivery: This super useful service can be availed by customers in cities like Bangalore, Mumbai,
-        Pune, Chennai, Kolkata, Hyderabad and Delhi-NCR in which we deliver your orders to your doorstep in 90 Minutes.
+        Pune, Chennai, Kolkata, Hyderabad and Delhi-NCR in which we deliver your orders to your doorstep in 90
+        Minutes.
       </li>
       <li>BB Specialty stores: Missed out on buying that essential item from your favorite neighborhood store for
         tonight's party? We'll deliver it for you! From bakery, sweets and meat to flowers and chocolates, we deliver
@@ -1584,7 +1793,8 @@
     <div>
       <h4>CITIES WE SERVE:</h4>
       <p>Bangalore, Hyderabad, Mumbai, Pune, Chennai, Delhi, Mysore, Madurai, Coimbatore, Vijayawada-Guntur, Kolkata,
-        Ahmedabad-Gandhinagar, Nashik Business, Lucknow-Kanpur, Gurgaon, Vadodara, Visakhapatnam, Surat, Nagpur, Patna,
+        Ahmedabad-Gandhinagar, Nashik Business, Lucknow-Kanpur, Gurgaon, Vadodara, Visakhapatnam, Surat, Nagpur,
+        Patna,
         Indore, Chandigarh Tricity, Jaipur, Bhopal, Noida-Ghaziabad, Kochi, Krishna District, Bhubaneshwar-Cuttack,
         Guwahati, Renigunta, Hubli, Davanagere, Trichy, Amravati, Raipur, Rajkot, Gwalior, Bareilly, Allahabad,
         Hyderabad Rural, Bangalore Rural, Chennai Rural, Vizag Rural, Lucknow Rural, Noida Rural, Ahmedabad Rural,
@@ -1609,6 +1819,8 @@
 </body>
 
 </html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   let slideIndex = 0;
@@ -1641,4 +1853,176 @@
       $(".slide-menu").animate({ left: "-250px" });
     });
   });
+
+
+
+  var fruitsarr = [
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+      brand: "bb Combo",
+      name: "Onion (Loose)",
+      strickprice: 151.32,
+      mrp: 120,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+      brand: "bb Combo",
+      name: "Onion (Loose)",
+      strickprice: 151.32,
+      mrp: 120,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+      brand: "bb Combo",
+      name: "Onion (Loose)",
+      strickprice: 151.32,
+      mrp: 120,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+      brand: "bb Combo",
+      name: "Onion (Loose)",
+      strickprice: 151.32,
+      mrp: 120,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+      brand: "bb Combo",
+      name: "Onion (Loose)",
+      strickprice: 151.32,
+      mrp: 120,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+      brand: "bb Combo",
+      name: "Onion (Loose)",
+      strickprice: 151.32,
+      mrp: 120,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+      brand: "bb Combo",
+      name: "Onion (Loose)",
+      strickprice: 151.32,
+      mrp: 120,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+      brand: "bb Combo",
+      name: "Onion (Loose)",
+      strickprice: 151.32,
+      mrp: 120,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+      brand: "bb Combo",
+      name: "Onion (Loose)",
+      strickprice: 151.32,
+      mrp: 120,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+      brand: "bb Combo",
+      name: "Onion (Loose)",
+      strickprice: 151.32,
+      mrp: 120,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+      brand: "bb Combo",
+      name: "Onion (Loose)",
+      strickprice: 151.32,
+      mrp: 120,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+      brand: "bb Combo",
+      name: "Onion (Loose)",
+      strickprice: 151.32,
+      mrp: 120,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+      brand: "bb Combo",
+      name: "Onion (Loose)",
+      strickprice: 151.32,
+      mrp: 120,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+      brand: "bb Combo",
+      name: "Onion (Loose)",
+      strickprice: 151.32,
+      mrp: 120,
+    },
+
+  ];
+
+  fruitsarr.map(function (elem) {
+    var div = document.createElement("div");
+
+    var image = document.createElement("img");
+    image.setAttribute("src", elem.img_url);
+
+
+    var brand = document.createElement("p");
+    brand.textContent = elem.brand;
+
+    var name = document.createElement("h3");
+    name.textContent = elem.name;
+
+    var priceBox = document.createElement("div");
+
+    var j_mrp = document.createElement("p");
+    j_mrp.textContent = "MRP-";
+
+    var strickprice = document.createElement("h4");
+    strickprice.textContent = "Rs." + elem.strickprice;
+
+    var mrp = document.createElement("h4");
+    mrp.textContent = "Rs. " + elem.mrp;
+
+    // started 
+
+    var delivery = document.createElement("p");
+    delivery.innerText = "Standard Delivery: Today 2:00PM - 9:30PM";
+
+    var divCartqty_parent = document.createElement("div");
+    divCartqty_parent.setAttribute("id", "crtqty")
+
+    var divQty_child1 = document.createElement("div");
+    divQty_child1.setAttribute("id", "qty")
+
+    var spanQty = document.createElement("span");
+    spanQty.innerText = "Qty";
+
+    var inputQty = document.createElement("input");
+    inputQty.setAttribute("placeholder", "Per Kg")
+
+    var divQty_child2 = document.createElement("div");
+    divQty_child2.setAttribute("id", "cart")
+
+    var cartBtn = document.createElement("button");
+    cartBtn.innerHTML = '<i class="fa-solid fa-basket-shopping"></i>' + " Cart";
+
+
+    divQty_child1.append(spanQty, inputQty);
+    divQty_child2.append(cartBtn)
+    divCartqty_parent.append(divQty_child1, divQty_child2);
+    priceBox.append(j_mrp, strickprice, mrp);
+    div.append(image, brand, name, priceBox, delivery, divCartqty_parent);
+    document.querySelector("#parent").append(div);
+  })
+
+
+
+  function leftScroll() {
+    const left = document.querySelector("#parent");
+    left.scrollBy(-200, 0);
+  }
+  function rightScroll() {
+    const right = document.querySelector("#parent");
+    right.scrollBy(200, 0);
+  }
+
 </script>
