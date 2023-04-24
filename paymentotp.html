@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OTP</title>
+    <style>
+        body{
+            margin: 0;
+            width: 40%;
+            margin: auto;
+           text-align: center;
+        }
+        form{
+            padding: 15px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Enter OTP</h1>
+    <form onsubmit="validateOTP()">
+      <label for="otp">OTP:</label>
+      <input type="text" id="otp">
+      <br>
+      <br>
+      <input type="submit">
+    </form>
+  </body>
+  <script>
+    function validateOTP() {
+      var otp = document.getElementById("otp").value;
+      if (otp === "1234") {
+        alert("Payment successful!");
+        return true;
+      } else {
+        alert("Incorrect OTP.");
+        return false;
+      }
+    }
+  </script>
+</html>
