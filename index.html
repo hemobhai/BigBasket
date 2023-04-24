@@ -1,0 +1,2149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/c3011d6d48.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <title>Big Basket</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    #navbox {
+      width: 80%;
+      margin: auto;
+    }
+
+    /* Top Nav CCSS Start */
+    #topnav {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 15px;
+    }
+
+    #topnav>p {
+      margin: 5px 0;
+    }
+
+    .dropbtn {
+      background-color: #ffffff;
+      color: black;
+      padding: 8px 16px;
+      font-size: 14px;
+      border: none;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #ffffff;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      right: 0;
+      left: auto;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 5px 16px;
+      text-decoration: none;
+      display: block;
+      border-bottom: 1px solid #dad8d8;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: #a5cd39;
+    }
+
+    /* Top Nav CCSS End */
+
+    /* Middle Nav CCSS Start */
+    #middlenav {
+      display: flex;
+      flex-direction: row;
+    }
+
+    #childmid1 {
+      margin-right: 50px;
+    }
+
+    #childmid2 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex: 1;
+    }
+    #childmid2>a {
+            color: black;
+            text-decoration: none;
+        }
+
+    #mybasket {
+      display: flex;
+      align-items: center;
+      background-color: #f1f1f1;
+      padding: 8px 12px;
+
+    }
+
+    #mybasket>#fntbasket {
+      margin-right: 20px;
+      font-size: 40px;
+    }
+
+    #mybasket>#colbasket {
+      display: flex;
+      flex-direction: column;
+
+    }
+
+    #colbasket>p {
+      margin: 0px
+    }
+
+    .search-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .search-container input[type="text"] {
+      padding: 6px;
+      border: 1px solid black;
+      font-size: 16px;
+      width: 450px;
+    }
+
+    .search-container button {
+      border: none;
+      background-color: #4caf50;
+      color: white;
+      padding: 7px 14px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .search-container button:hover {
+      background-color: #45a049;
+    }
+
+    /* Middle Nav CCSS End */
+
+    /* Bottom Nav CSS Start */
+
+    #bottomnav {
+      display: flex;
+      align-items: center;
+    }
+
+    #offers>p {
+      margin: 0;
+    }
+
+    #childbottom2 {
+      display: flex;
+      flex: 1;
+      border: 1px solid rgb(196, 192, 192);
+    }
+
+    #childmid2>a{
+      color: black;
+      text-decoration: none;
+    }
+
+    #childbottom2>#offers {
+      color: black;
+      padding: 8px 16px;
+      font-size: 18px;
+    }
+
+    .dropbtn_bottomnav {
+      background-color: #a5cd39;
+      color: rgb(255, 255, 255);
+      padding: 10px 16px;
+      font-size: 16px;
+      border: none;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+
+    }
+
+    .dropdown-content_bottomnav {
+      display: none;
+      position: absolute;
+      background-color: #ffffff;
+      min-width: 259px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content_bottomnav a {
+      color: black;
+      padding: 5px 16px;
+      text-decoration: none;
+      display: block;
+      border-bottom: 1px solid #dad8d8;
+    }
+
+    .dropdown-content_bottomnav a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content_bottomnav {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn_bottomnav {
+      background-color: #a5cd39;
+    }
+
+    .lfsd {
+      margin-left: 50px;
+    }
+
+    #offers:hover {
+      background-color: #a5cd39;
+      color: white;
+    }
+
+    #offers>p:hover {
+      color: white;
+    }
+
+    /* Bottom Nav CSS End */
+
+    /* Poster CSS Start */
+    #poster {
+      width: 80%;
+      margin: auto;
+    }
+
+    #poster img {
+      width: 100%;
+    }
+
+    /* Poster CSS End */
+
+    /* Miniboxes CSS Start */
+    #miniboxes {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      width: 80%;
+      margin: 50px auto;
+      gap: 15px;
+    }
+
+    #miniboxes img {
+      width: 100%;
+    }
+
+    /* Miniboxes CSS End */
+
+    /* <!-- Offers & Popular & Top CSS Start --> */
+    .off_pop {
+      width: 80%;
+      margin: 50px auto;
+    }
+
+    .off_pop h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .off_pop_boxes {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .off_pop_boxes img {
+      width: 100%;
+    }
+
+    .off_pop_boxes>div {
+      border: 1px solid #f0f0f0;
+    }
+
+    .off_pop_boxes>div:hover {
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    /* <!-- Offers & Popular & Top CSS End --> */
+
+    /* <!-- Up to Off CSS Start --> */
+    .uptooff {
+      width: 80%;
+      margin: 50px auto;
+    }
+
+    .uptooff h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .uptooff_boxes {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .uptooff_boxes img {
+      width: 100%;
+    }
+
+    .uptooff_boxes>div {
+      border: 1px solid #f0f0f0;
+    }
+
+    .uptooff_boxes>div:hover {
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    /* <!-- Offers & Popular & Top CSS End --> */
+
+    /* Sliding Img CSS Start */
+
+    .mySlides {
+      display: none;
+      border: 1px solid #f0f0f0;
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      /* height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block; */
+      transition: background-color 0.6s ease;
+    }
+
+    .active {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      .text {
+        font-size: 11px
+      }
+    }
+
+    /* Slide img CSS End */
+
+    /* mg-top is margin */
+    .mg_top {
+      margin-top: 20px;
+    }
+
+    /* mg-top is margin */
+
+    /* footerBanner img CSS Start */
+    #footbannerimg {
+      width: 80%;
+      margin: 50px auto;
+    }
+
+    #footbannerimg>img {
+      width: 100%;
+    }
+
+    /* footerBanner img CSS Start */
+
+    /* onlinegeroery CSS start */
+    #onlinegrocery {
+      width: 77%;
+      margin: 50px auto;
+      border: 1px solid #dbd9d9;
+      padding: 22px;
+    }
+
+    #onlinegrocery>h2 {
+      margin: 0;
+    }
+
+    /* onlinegeroery CSS End */
+
+    /* footerlinks CSS Start */
+    #footerlinks {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      width: 80%;
+      margin: 50px auto 30px;
+    }
+
+    #footerlinks ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    #footerlinks ul>li {
+      padding: 5px 0;
+    }
+
+    #footerlinks ul>li:first-child {
+      font-size: 17px;
+      color: #a5cd39;
+    }
+
+    #footerlinks ul>li>a {
+      text-decoration: none;
+      color: black;
+    }
+
+    #footerlinks ul>li>a:hover {
+      color: #a5cd39;
+    }
+
+    #socialicons {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      font-size: 40px;
+    }
+
+    #socialicons .fb {
+      color: rgb(36, 88, 231);
+    }
+
+    #socialicons .fb:hover {
+      color: #a5cd39
+    }
+
+    #socialicons .pi {
+      color: rgb(244, 13, 24);
+    }
+
+    #socialicons .pi:hover {
+      color: #a5cd39
+    }
+
+    #socialicons .tw {
+      color: rgb(13, 167, 244);
+    }
+
+    #socialicons .tw:hover {
+      color: #a5cd39
+    }
+
+    #socialicons .insta {
+      color: rgb(244, 13, 71);
+    }
+
+    #socialicons .insta:hover {
+      color: #a5cd39
+    }
+
+    /* footerlinks CSS End */
+    #footdetails {
+      width: 80%;
+      margin: auto;
+    }
+
+    #footdetails h4 {
+      color: #a5cd39;
+      margin: 0;
+    }
+
+    #footdetails p {
+      margin: 10px 0;
+    }
+
+
+    #copyrights {
+      background-color: #eaeaea;
+      padding: 10px;
+    }
+
+    #copyrights div {
+      width: 80%;
+      margin: auto;
+    }
+
+    #copyrights p {
+      margin: 0;
+    }
+
+
+    /* mobilenavbar CSS start */
+
+
+    nav {
+      padding: 5px;
+      background-color: #689f38;
+      box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    #navm {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 30px;
+      position: relative;
+    }
+
+    .logo {
+      flex: 1;
+      text-align: center;
+    }
+
+    .logo h2 {
+      color: white;
+    }
+
+    .hamburger {
+      flex: 1;
+      text-align: left;
+      padding-left: 20px;
+      color: white;
+    }
+
+    .profile {
+      flex: 1;
+      text-align: right;
+      padding-right: 20px;
+    }
+
+    .profile i {
+      font-size: 16px;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .slide-menu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #689f38;
+      padding-top: 60px;
+      transition: all 0.3s ease;
+      z-index: 9999;
+    }
+
+    .slide-menu>h4 {
+      color: #fff;
+    }
+
+    .slide-menu ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .slide-menu ul li {
+      padding: 5px;
+      border-bottom: 1px solid #dad8d8;
+    }
+
+    .slide-menu ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    /* mobilenavbar CSS end */
+
+
+    /* Product Crosel start */
+
+
+
+    #godfather {
+      width: 80%;
+      margin: auto;
+      position: relative;
+    }
+
+    #godfather>h2 {
+      text-align: center;
+    }
+
+    .left {
+      position: absolute;
+      left: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .right {
+      position: absolute;
+      right: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+
+    .arrow {
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 5px;
+    }
+
+    .right1 {
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
+
+    .left1 {
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+    }
+
+    #parent {
+      /* display: grid;
+      grid-template-columns: repeat(4, 1fr);*/
+
+
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      /* gap: 20px; */
+      /* scroll-snap-type: x mandatory; */
+      -webkit-overflow-scrolling: touch;
+      align-items: center;
+      /* Add this property */
+      /* margin: 20px 0; */
+    }
+
+    #parent::-webkit-scrollbar {
+      -webkit-appearance: none;
+    }
+
+    /* #parent::-webkit-scrollbar-thumb {
+      background-color: black;
+    } */
+
+    #parent>div {
+      flex: 0 0 auto;
+      width: 22%;
+      overflow: hidden;
+      margin: 20px;
+      /* scroll-snap-align: start; */
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      padding: 20px;
+    }
+
+    #parent>div:hover {
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+
+    #parent>div>div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 3px;
+      margin-bottom: -10px;
+      background-color: #f4f3f2;
+      padding: 5px;
+    }
+
+    #parent>div>img {
+      width: 100%;
+    }
+
+    #parent>div>div>h4:nth-child(2) {
+      text-decoration: line-through;
+      font-size: 11px;
+    }
+
+    #parent>div>div>p {
+      font-size: 10px;
+      margin: 0;
+    }
+
+    #parent>div>div>h4 {
+      font-weight: 200;
+      font-size: 15px;
+    }
+
+    #parent>#crtqty {
+      display: flex;
+      flex-direction: row;
+      margin-top: 10px;
+    }
+
+    #crtqty {
+      padding-bottom: 15px;
+    }
+
+    #cart>button {
+      background-color: #f5d177;
+      border: none;
+      padding: 4px 9px;
+      border-radius: 5px;
+    }
+
+    #cart>button:hover {
+      background-color: #ebb326;
+    }
+
+    #qty>input {
+      width: 52%;
+      margin-left: 6px;
+    }
+
+    #parent>#qty {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    #crtqty>div {
+      width: 50%;
+    }
+
+    #parent>div>p {
+      font-size: 13px;
+      margin: 5px 0;
+    }
+
+    #parent>div>p:nth-child(5) {
+      background: #f4f3f2;
+      margin: 0;
+      padding: 5px;
+    }
+
+    #parent>div>h3,
+    h4 {
+      margin: 5px 0;
+    }
+
+    /* Product Crosel End */
+
+    /* large screens */
+
+    @media all and (min-width: 1440px) {
+
+      /* write code here */
+      nav {
+        display: none;
+      }
+
+    }
+
+    @media all and (min-width: 1024px) and (max-width: 1439px) {
+
+      /* write code here */
+
+      /* parent product css start */
+
+      #parent>div {
+        width: 28%;
+      }
+
+      /* parent product css end */
+
+      nav {
+        display: none;
+      }
+
+
+      /* Navbar CSS Start */
+      #childmid1 {
+        margin-right: 30px;
+      }
+
+      .search-container input[type="text"] {
+        width: 340px;
+      }
+
+      .dropbtn_bottomnav {
+        font-size: 12px;
+      }
+
+      #mybasket {
+        padding: 12px 5px;
+      }
+
+      #childbottom2>#offers {
+        font-size: 13.5px;
+      }
+
+      #mybasket>#fntbasket {
+        font-size: 35px;
+      }
+
+      /* Navbar CSS End */
+
+      .slideshow-container {
+        max-width: 80%;
+      }
+
+    }
+
+    /* medium screens */
+    @media all and (min-width: 768px) and (max-width: 1023px) {
+
+      /* write code here */
+      #navbox {
+        display: none;
+      }
+
+      .logo h2 {
+        font-size: 19px;
+      }
+
+      form {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .search-container1 input[type="text"] {
+        padding: 6px;
+        font-size: 12px;
+        width: 450px;
+        border-radius: 10px;
+        border: none;
+      }
+
+      .search-container1 button {
+        border: none;
+        background-color: #ffffff;
+        color: #689f38;
+        padding: 7px 14px;
+        cursor: pointer;
+        font-size: 12px;
+        border-radius: 10px;
+      }
+
+      #mobplay img {
+        width: 100%;
+      }
+
+      .slideshow-container {
+        max-width: 80%;
+      }
+
+      #footerlinks {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      /* Parent product start */
+
+      #parent>div {
+        width: 44%;
+      }
+
+      /* Parent product end */
+
+      /* <!-- Offers & Popular & Top CSS Start --> */
+      .off_pop {
+        width: 90%;
+      }
+
+      .off_pop_boxes {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .off_pop {
+        margin: 40px auto;
+      }
+
+      /* <!-- Offers & Popular & Top CSS End --> */
+
+      /* <!-- Up to Off CSS Start --> */
+      .uptooff {
+        width: 90%;
+      }
+
+      .uptooff_boxes {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .uptooff {
+        margin: 40px auto;
+      }
+
+      /* <!-- Up to Off CSS End --> */
+    }
+
+    /* Small screens */
+    @media all and (min-width: 320px) and (max-width: 767px) {
+
+      /* write code here */
+      h2 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 14px;
+        text-align: justify;
+      }
+
+      #navbox {
+        display: none;
+      }
+
+      #godfather {
+        display: none;
+      }
+
+      /* Mobile Navbar CSS Start*/
+
+      .hamburger {
+        display: block;
+      }
+
+      .logo {
+        display: block;
+        position: absolute;
+        top: -15;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      /* .profile {
+        display: none;
+      } */
+
+
+      .search-container1 input[type="text"] {
+        padding: 6px;
+        font-size: 10px;
+        width: 79%;
+        border-radius: 10px;
+        border: none;
+      }
+
+      .search-container1 button {
+        border: none;
+        background-color: #ffffff;
+        color: #689f38;
+        padding: 7px 14px;
+        cursor: pointer;
+        font-size: 10px;
+        border-radius: 10px;
+      }
+
+      #mysearch {
+        width: 90%;
+        margin: auto;
+      }
+
+
+      /* Mobile Navbar CSS End */
+
+      #miniboxes {
+        display: none;
+      }
+
+      /* Poster Start */
+      #poster {
+        width: 90%;
+        margin: 15px auto;
+      }
+
+      /* Poster End */
+
+      /* <!-- Offers & Popular & Top CSS Start --> */
+      .off_pop {
+        width: 90%;
+      }
+
+      .off_pop_boxes {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .off_pop {
+        margin: 30px auto;
+      }
+
+      /* <!-- Offers & Popular & Top CSS End --> */
+
+      /* <!-- Up to Off CSS Start --> */
+      .uptooff {
+        width: 90%;
+      }
+
+      .uptooff_boxes {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .uptooff {
+        margin: 30px auto;
+      }
+
+      /* <!-- Up to Off CSS End --> */
+
+      /* SliderShow CSS Start */
+      .slideshow-container {
+        max-width: 90%;
+        /* margin: 30px auto; */
+      }
+
+      /* SliderShow CSS End */
+
+      /* footerlinks CSS Start */
+      #footerlinks {
+        grid-template-columns: repeat(1, 1fr);
+        text-align: center;
+        margin: 30px auto 30px;
+      }
+
+      #mobplay {
+        display: none;
+      }
+
+      /* footerlinks CSS End */
+
+      /* onlinegrocery CSS Start*/
+      #onlinegrocery {
+        margin: 30px auto;
+        padding: 20px;
+      }
+
+      #onlinegrocery ul {
+        font-size: 14px;
+        text-align: justify;
+      }
+
+      /* onlinegrocery CSS End*/
+
+      /* Socialicons CSS Start*/
+      #socialicons {
+        justify-content: center;
+      }
+
+      /* Socialicons CSS End*/
+
+      /* footbannerimg CSS Start*/
+
+      #footbannerimg {
+        width: 90%;
+        margin: 30px auto;
+      }
+
+      /* footbannerimg CSS End*/
+
+      /* copyrights CSS Start */
+      #copyrights p {
+        font-size: 9px;
+      }
+
+      /* copyrights CSS End */
+    }
+
+    #show_name {
+
+      font-size: 15px;
+    }
+
+    #username>p {
+      margin: 0 -15px 0 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbox start -->
+  <div id="navbox">
+    <div id="topnav">
+      <p>
+        <span><i class="fa-solid fa-phone"></i></span> 1860 123 1000
+      </p>
+      <p>
+        <span><i class="fa-solid fa-location-dot"></i></span> 560004,
+        Bangalore <span><i class="fa-solid fa-angle-down"></i></span>
+      </p>
+      <div id="username">
+        <p id="show_name"></p>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">
+          BigBasketeer<i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">My Account</a>
+          <a href="#">My Basket</a>
+          <a href="#">My Orders</a>
+          <a href="#">Wallet</a>
+          <a href="#">Rewards</a>
+          <a href="#">Ask Us</a>
+          <a href="#">Customer Service</a>
+          <a href="signup.html">Signup/Login</a>
+        </div>
+      </div>
+    </div>
+    <div id="middlenav">
+      <div id="childmid1">
+        <img src="https://www.bbassets.com/static/v2659/custPage/build/content/img/bb_logo.png" alt="" />
+      </div>
+      <div id="childmid2">
+        <div id="mysearch">
+          <div class="search-container">
+            <form action="/search">
+              <input type="text" placeholder="Search..." />
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+        </div>
+        <a href="newcart.html">
+          <div id="mybasket">
+            <div id="fntbasket"><span><i class="fa-solid fa-basket-shopping"></i></span></i></div>
+
+            <div id="colbasket">
+              <p>My Basket</p>
+              <!-- <p>0 items</p> -->
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+    <div id="bottomnav">
+      <div id="childbottom1">
+        <div class="dropdown">
+          <button class="dropbtn_bottomnav">
+            SHOP BY CATEGORY <i class="fa fa-caret-down lfsd"></i>
+          </button>
+          <div class="dropdown-content_bottomnav">
+            <a href="productFruitandVegetable.html">Fruits & Vegetables</a>
+            <a href="productBakery.html">Bakery, Cakes & Dairy</a>
+            <a href="#">Foodgrains, Oil & Masala</a>
+            <a href="#">Beverages</a>
+            <a href="#">Snacks & Branded Foods</a>
+            <a href="#">Beauty & Hygiene</a>
+            <a href="#">Cleaning & Household</a>
+            <a href="#">Kitchen, Garden & Pets </a>
+            <a href="#">Eggs, Meat & Fish</a>
+            <a href="#">Gourmet & World Food</a>
+            <a href="#">Baby Care</a>
+            <a href="#">View All</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="childbottom2">
+        <div id="offers">
+          <p><span><i class="fa-solid fa-tag"></i></span> OFFERS</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- Navbox End -->
+  <!-- Mobile NavBar Start -->
+  <nav>
+    <div id="navm">
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="logo">
+        <h2>BigBasket</h2>
+      </div>
+      <div class="profile">
+        <i class="fas fa-user"></i>
+      </div>
+    </div>
+    <div id="mysearch">
+      <div class="search-container1">
+        <form action="/search">
+          <input type="text" placeholder="Search..." />
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="slide-menu">
+    <h4>SHOP BY CATEGORY</h4>
+    <ul>
+      <li><a href="#">Fruits & Vegetables</a></li>
+      <li><a href="#">Bakery, Cakes & Dairy</a></li>
+      <li><a href="#">Foodgrains, Oil & Masala</a></li>
+      <li><a href="#">Beverages</a></li>
+      <li><a href="#">Snacks & Branded Foods</a></li>
+      <li><a href="#">Beauty & Hygiene</a></li>
+      <li><a href="#">Cleaning & Household</a></li>
+      <li><a href="#">Kitchen, Garden & Pets </a></li>
+      <li><a href="#">Eggs, Meat & Fish</a></li>
+      <li><a href="#">Gourmet & World Food</a></li>
+      <li><a href="#">Baby Care</a></li>
+      <li><a href="#">View All</a></li>
+    </ul>
+  </div>
+  <!-- Mobile NavBar End -->
+
+  <!-- Poster start -->
+  <div id="poster">
+    <img src="https://www.bigbasket.com/media/uploads/banner_images/hp_m_Dry_FishBanner_1600x460_070922.jpg"
+      alt="fishBanner">
+  </div>
+  <!-- Poster End -->
+
+  <!-- Miniboxes Start-->
+
+  <div id="miniboxes">
+    <div>
+      <img src="https://www.bigbasket.com/media/uploads/banner_images/hp_topstrip_m_250323_01.png" alt="pic1">
+    </div>
+    <div>
+      <img src="https://www.bigbasket.com/media/uploads/banner_images/hp_topstrip_m_250323_02.png" alt="pic2">
+    </div>
+    <div>
+      <img src="https://www.bigbasket.com/media/uploads/banner_images/hp_topstrip_m_250323_03.png" alt="pic3">
+    </div>
+    <div>
+      <img src="https://www.bigbasket.com/media/uploads/banner_images/hp_topstrip_m_250323_04.png" alt="pic4">
+    </div>
+    <div>
+      <img src="https://www.bigbasket.com/media/uploads/banner_images/hp_topstrip_m_250323_05.png" alt="pic5">
+    </div>
+    <div>
+      <img src="https://www.bigbasket.com/media/uploads/banner_images/hp_topstrip_m_250323_06.png" alt="pic6">
+    </div>
+
+  </div>
+  <!-- Miniboxes End-->
+
+
+  <!-- Parent products Start -->
+  <div id="godfather">
+    <h2>Best Seller</h2>
+    <hr>
+    <p class="left" onclick="leftScroll()"><i class="arrow left1"></i></p>
+    <div id="parent"></div>
+    <p class="right" onclick="rightScroll()"><i class="arrow right1"></i></p>
+  </div>
+
+  <!-- Parent products End -->
+
+  <!-- Bank_Offers Start -->
+
+  <div class="off_pop">
+    <h2>Bank Offers</h2>
+    <hr>
+    <div class="off_pop_boxes">
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/4ea30d34-2092-4c11-9759-4f8c6fe09c6a/March_bb_PaytmWallet_360_170423.jpg"
+          alt="paytm">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/4ea30d34-2092-4c11-9759-4f8c6fe09c6a/March_bb_IndusIndBankDC_480x360_100423.jpg"
+          alt="indusbank">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/4ea30d34-2092-4c11-9759-4f8c6fe09c6a/March_bb_AUB_480x360_100423.jpg"
+          alt="au_finace">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/4ea30d34-2092-4c11-9759-4f8c6fe09c6a/March_bb_HSBC_2_480x360_100423.jpg"
+          alt="HSBC">
+      </div>
+    </div>
+  </div>
+
+  <!-- Bank_Offers End -->
+
+  <!-- Most Popular Start -->
+
+  <div class="off_pop">
+    <h2>Most Popular</h2>
+    <hr>
+    <div class="off_pop_boxes">
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/ee20c95c-230b-49a6-9386-63590af643b6/hp_fnv-mangoes_m_480_250323_01.jpg"
+          alt="Mangoes">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/ee20c95c-230b-49a6-9386-63590af643b6/hp_summer-bottles_m_480_250323_02.jpg"
+          alt="SummerBottles">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/ee20c95c-230b-49a6-9386-63590af643b6/hp_sunscreens_m_480_250323_03.jpg"
+          alt="Sunscreens">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/ee20c95c-230b-49a6-9386-63590af643b6/hp_summer-deos_m_480_250323_04_.jpg"
+          alt="SummerDeos">
+      </div>
+    </div>
+  </div>
+
+  <!-- Most Popular End -->
+
+  <!-- Top Offers Start -->
+  <div class="off_pop">
+    <h2>Top Offers</h2>
+    <hr>
+    <div class="off_pop_boxes">
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/e8c51ca5-7a61-4b28-97a5-eacb8a8e3582/hp_dow-topoffersStorefront_m_480_250323_01.jpg"
+          alt="DealsOfTheWeek">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/e8c51ca5-7a61-4b28-97a5-eacb8a8e3582/hp_big-packs-topoffersStorefront_m_480_250323_02.jpg"
+          alt="BigDiscounts">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/e8c51ca5-7a61-4b28-97a5-eacb8a8e3582/hp_combos-topoffersStorefront_m_480_250323_03.jpg"
+          alt="YouCantMiss">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/e8c51ca5-7a61-4b28-97a5-eacb8a8e3582/hp_30-corner-topoffersStorefront_m_480_250323_04.jpg"
+          alt="30Corner">
+      </div>
+    </div>
+  </div>
+  <!-- Top Offers End -->
+
+  <!-- Fruits & Veg Start -->
+
+  <div class="uptooff">
+    <h2>Fruits and Vegetables</h2>
+    <hr>
+    <div class="uptooff_boxes">
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/eceafe85-3773-4a8b-b335-cb2bfbec01ce/hp_organic-fnc-fnv_Storefront_m_250323_01.jpg"
+          alt="OrganicFruits&Veg">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/eceafe85-3773-4a8b-b335-cb2bfbec01ce/hp_fresh-fruits-fnv_Storefront_m_250323_02.jpg"
+          alt="FreshFruits">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/eceafe85-3773-4a8b-b335-cb2bfbec01ce/hp_fresh-vegetables-fnv_Storefront_m_250323_03.jpg"
+          alt="FreshVeg">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/eceafe85-3773-4a8b-b335-cb2bfbec01ce/hp_cuts-sprouts-fnv_Storefront_m_250323_04.jpg"
+          alt="Cuts&Sprouts">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/eceafe85-3773-4a8b-b335-cb2bfbec01ce/hp_exotic-fruits-fnv_Storefront_m_250323_05.jpg"
+          alt="ExoticFruits&Veg">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/eceafe85-3773-4a8b-b335-cb2bfbec01ce/hp_herbs-seasonings-fnv_Storefront_m_250323_06.jpg"
+          alt="Herbs&Seasoning">
+      </div>
+    </div>
+  </div>
+
+  <!-- Fruits & Veg End -->
+
+
+  <!-- Your Daily Staples Start -->
+
+  <div class="uptooff">
+    <h2>Your Daily Staples</h2>
+    <hr>
+    <div class="uptooff_boxes">
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/4070b03c-7096-446a-b583-fe54b5b9c5a7/hp_atta-flour-staplesStorefront_m_480_250323_01.jpg"
+          alt="AttaFour">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/4070b03c-7096-446a-b583-fe54b5b9c5a7/hp_rice-staplesStorefront_m_480_250323_02.jpg"
+          alt="Rice&RiceProducts">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/4070b03c-7096-446a-b583-fe54b5b9c5a7/hp_dals-pulses-staplesStorefront_m_480_250323_03.jpg"
+          alt="Dal&Pulses">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/4070b03c-7096-446a-b583-fe54b5b9c5a7/hp_cooking-oils-staplesStorefront_m_480_250323_04.jpg"
+          alt="CookingOils&Ghee">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/4070b03c-7096-446a-b583-fe54b5b9c5a7/hp_dry-fruits-staplesStorefront_m_480_250323_05.jpg"
+          alt="DryFruits">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/4070b03c-7096-446a-b583-fe54b5b9c5a7/hp_salt-staplesStorefront_m_480_250323_06.jpg"
+          alt="SaltSugarJaggery">
+      </div>
+    </div>
+  </div>
+
+  <!-- Your Daily Staples End -->
+
+  <!-- Beverages Start -->
+
+  <div class="uptooff">
+    <h2>Beverages</h2>
+    <hr>
+    <div class="uptooff_boxes">
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/1e428997-2f8a-4e83-95e9-de3efbcafe50/hp_beve-health-drinks_m_250323_01.jpg"
+          alt="HealtyDrinks">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/1e428997-2f8a-4e83-95e9-de3efbcafe50/hp_bev-tea-coff_m_250323_02.jpg"
+          alt="TeaCoffee">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/1e428997-2f8a-4e83-95e9-de3efbcafe50/hp_bev-flavoured-milk_m_250323_03.jpg"
+          alt="SoyaMilk">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/1e428997-2f8a-4e83-95e9-de3efbcafe50/hp_beve-juices_m_250323_04.jpg"
+          alt="FruityIndulgene">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/1e428997-2f8a-4e83-95e9-de3efbcafe50/hp_bev-power-nooster_m_250323_05.jpg"
+          alt="PowerBoster">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/1e428997-2f8a-4e83-95e9-de3efbcafe50/hp_bev-soft-drinks_m_250323_06.jpg"
+          alt="CrickItDrinkIt">
+      </div>
+    </div>
+  </div>
+
+  <!-- Beverages End -->
+
+  <!-- Snacks Store Start -->
+  <div class="off_pop">
+    <h2>Snacks Store</h2>
+    <hr>
+    <div class="off_pop_boxes">
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/3a91f013-48f4-4a48-822c-5253f7b475ce/hp_chai-time_m_480_250323_01.jpg"
+          alt="ChaiTimeSnack">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/3a91f013-48f4-4a48-822c-5253f7b475ce/hp_morining-start_m_480_250323_02.jpg"
+          alt="MoringStarters">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/3a91f013-48f4-4a48-822c-5253f7b475ce/hp_satisfy-hunger_m_480_250323_03.jpg"
+          alt="SatisfyYourHunger">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/3a91f013-48f4-4a48-822c-5253f7b475ce/hp_sweet-craving_m_480_250323_04.jpg"
+          alt="SweetCravings">
+      </div>
+    </div>
+  </div>
+  <!-- Snacks Store End -->
+
+  <!-- Cleaning & Household Start -->
+  <div class="off_pop">
+    <h2>Cleaning & Household</h2>
+    <hr>
+    <div class="off_pop_boxes">
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/041af9db-5f22-4e5a-8da6-f9d5b5c3ec73/hp_cleaners-disfec_cleaningStorefront_m_480_250123_01.jpg"
+          alt="CleanersDisfectansts">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/041af9db-5f22-4e5a-8da6-f9d5b5c3ec73/hp_fresheners-repellem-cleaningStorefront_m_480_250123_02.jpg"
+          alt="Freshers">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/041af9db-5f22-4e5a-8da6-f9d5b5c3ec73/hp_detergebts-favric-cleaningStorefront_m_480_250123_03.jpg"
+          alt="Detergents">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/041af9db-5f22-4e5a-8da6-f9d5b5c3ec73/hp_disposable-cleaningStorefront_m_480_250123_4.jpg"
+          alt="Disposables">
+      </div>
+    </div>
+  </div>
+  <!-- Cleaning & Household End -->
+
+
+  <!-- Beauty and Hygiene Start -->
+
+  <div class="uptooff">
+    <h2>Beauty and Hygiene</h2>
+    <hr>
+    <div class="uptooff_boxes">
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/0b6b3238-9b25-428d-bfbe-fa0a2e6defed/hp_beauty-makeup-carnival_m_250323_01.jpg"
+          alt="MakeUpCarnival">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/0b6b3238-9b25-428d-bfbe-fa0a2e6defed/hp_beauty-sunsreens_m_250323_02.jpg"
+          alt="SunScreens">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/0b6b3238-9b25-428d-bfbe-fa0a2e6defed/hp_beauty-scentful-deos_m_250323_03.jpg"
+          alt="Scentful">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/0b6b3238-9b25-428d-bfbe-fa0a2e6defed/hp_beauty-shaving-saviouurs_m_250323_04.jpg"
+          alt="ShavingSaviours">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/0b6b3238-9b25-428d-bfbe-fa0a2e6defed/hp_beauty-min35off_m_250323_05.jpg"
+          alt="Shampoo">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/0b6b3238-9b25-428d-bfbe-fa0a2e6defed/hp_beauty-under199_m_250323_06.jpg"
+          alt="Perfume">
+      </div>
+    </div>
+  </div>
+
+  <!-- Beauty and Hygiene End -->
+
+
+  <!-- Home and Kitchen Start -->
+
+  <div class="uptooff">
+    <h2>Home and Kitchen</h2>
+    <hr>
+    <div class="uptooff_boxes">
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/7990aa10-e842-47d0-be2f-e10c37be9e2e/hp_GM-under-99_m_250323_01.jpg"
+          alt="picofkitchen1">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/7990aa10-e842-47d0-be2f-e10c37be9e2e/hp_GM-100-199_m_250323_02.jpg"
+          alt="picofkitchen2">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/7990aa10-e842-47d0-be2f-e10c37be9e2e/hp_GM-min30off_m_250323_03.jpg"
+          alt="picofkitchen3">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/7990aa10-e842-47d0-be2f-e10c37be9e2e/hp_GMmin-50off_m_250323_04.jpg"
+          alt="picofkitchen4">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/7990aa10-e842-47d0-be2f-e10c37be9e2e/hp_GM-pressiure-cooker_m_250323_05.jpg"
+          alt="picofkitchen5">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/7990aa10-e842-47d0-be2f-e10c37be9e2e/hp_GM-sstorage-containers_m_250323_06.jpg"
+          alt="picofkitchen6">
+      </div>
+    </div>
+  </div>
+
+  <!-- Home and Kitchen End -->
+
+
+  <!-- SlideShow Start -->
+  <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <img src="https://www.bigbasket.com/media/uploads/banner_images/hp_m_babycare_250223_400.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="https://www.bigbasket.com/media/uploads/banner_images/hp_m_petstore_250323_400.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="https://www.bigbasket.com/media/uploads/banner_images/hp_bcd_m_bcd_250223_400.jpg" style="width:100%">
+    </div>
+
+  </div>
+
+
+  <div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+
+  <!-- SlideShow End -->
+
+  <!-- Brand Store Start -->
+  <div class="uptooff mg_top">
+    <h2>Brand Store</h2>
+    <hr>
+    <div class="uptooff_boxes">
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/71368a71-c258-4cb9-a8aa-fdcfccae7e9b/amul-hp_brandStorefront_m_480_250323_01.jpg"
+          alt="Amul">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/71368a71-c258-4cb9-a8aa-fdcfccae7e9b/dettol-hp_brandStorefront_m_480_250323_02.jpg"
+          alt="Dettol">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/71368a71-c258-4cb9-a8aa-fdcfccae7e9b/coca-cola-hp_brandStorefront_m_480_250323_03.jpg"
+          alt="CoccaCola">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/71368a71-c258-4cb9-a8aa-fdcfccae7e9b/loreal-hp_brandStorefront_m_480_250323_04.jpg"
+          alt="Loreal">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/71368a71-c258-4cb9-a8aa-fdcfccae7e9b/Baulli_hp_brandStorefront_m_480_250323_05.jpg"
+          alt="Bauli">
+      </div>
+      <div>
+        <img
+          src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/6cf6d3c9-a568-4a3c-8ec2-6476ddcebad1/71368a71-c258-4cb9-a8aa-fdcfccae7e9b/durex-hp_brandStorefront_m_480_250323_06.jpg"
+          alt="durex">
+      </div>
+    </div>
+  </div>
+
+  <!-- Brand Store End -->
+
+  <!-- footImg start -->
+
+  <div id="footbannerimg">
+    <img
+      src="https://www.bigbasket.com/media/uploads/banner_images/hp_bbw_c_400_web_wellness_banner_gut_health_w3mar23_03042023.jpg"
+      alt="footbannerhealth">
+  </div>
+
+  <!-- footImg End -->
+
+  <!-- online grocery details start -->
+  <div id="onlinegrocery">
+    <h2>bigbasket - online grocery store</h2>
+    <p>Did you ever imagine that the freshest of fruits and vegetables, top quality pulses and food grains, dairy
+      products and hundreds of branded items could be handpicked and delivered to your home, all at the click of a
+      button? India's first comprehensive online megastore, bigbasket.com, brings a whopping 20000+ products with more
+      than 1000 brands, to over 4 million happy customers. From household cleaning products to beauty and makeup,
+      bigbasket has everything you need for your daily needs. bigbasket.com is convenience personified We've taken
+      away
+      all the stress associated with shopping for daily essentials, and you can now order all your household products
+      and even buy groceries online without travelling long distances or standing in serpentine queues. Add to this
+      the
+      convenience of finding all your requirements at one single source, along with great savings, and you will
+      realize
+      that bigbasket- India's largest online supermarket, has revolutionized the way India shops for groceries. Online
+      grocery shopping has never been easier. Need things fresh? Whether it's fruits and vegetables or dairy and meat,
+      we have this covered as well! Get fresh eggs, meat, fish and more online at your convenience. Hassle-free Home
+      Delivery options</p>
+    <p>We deliver to 25 cities across India and maintain excellent delivery times, ensuring that all your products
+      from
+      groceries to snacks branded foods reach you in time.</p>
+    <ul>
+      <li>Slotted Delivery: Pick the most convenient delivery slot to have your grocery delivered. From early morning
+        delivery for early birds, to late-night delivery for people who work the late shift, bigbasket caters to every
+        schedule.</li>
+      <li>Express Delivery: This super useful service can be availed by customers in cities like Bangalore, Mumbai,
+        Pune, Chennai, Kolkata, Hyderabad and Delhi-NCR in which we deliver your orders to your doorstep in 90
+        Minutes.
+      </li>
+      <li>BB Specialty stores: Missed out on buying that essential item from your favorite neighborhood store for
+        tonight's party? We'll deliver it for you! From bakery, sweets and meat to flowers and chocolates, we deliver
+        your order in 90 minutes, through a special arrangement with a nearby specialty store, verified by us.</li>
+    </ul>
+    <button>Read More..</button>
+  </div>
+  <!-- online grocery details End -->
+
+  <!-- footerLinks start -->
+  <div id="footerlinks">
+    <div>
+      <ul>
+        <li>bigbasket</li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">In News</a></li>
+        <li><a href="#">Green bigbasket</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Affiliate</a></li>
+        <li><a href="#">Terms and Conditions</a></li>
+        <li><a href="#">Careers At bigbasket</a></li>
+        <li><a href="#">bb Instant</a></li>
+        <li><a href="#">bb Daily</a></li>
+        <li><a href="#">bb Blog</a></li>
+        <li><a href="#">bbnow</a></li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li>Help</li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">bb Wallet T&Cs</a></li>
+        <li><a href="#">Vendor Connect</a></li>
+
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li>Download Our App</li>
+        <li><a href="#"><img
+              src="https://www.bbassets.com/static/v2659/custPage/build/content/img/Google-App-store-icon.png"
+              alt="googlepay"></a></li>
+        <li><a href="#"><img
+              src="https://www.bbassets.com/static/v2659/custPage/build/content/img/Apple-App-store-icon.png"
+              alt="Appstore"></a></li>
+
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li>Get Social With Us</li>
+        <div id="socialicons">
+          <li><a href="#"><i class="fa-brands fa-facebook fb"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-pinterest pi"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-twitter tw"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram insta"></i></a></li>
+        </div>
+      </ul>
+    </div>
+  </div>
+  <!-- footerLinks End -->
+
+
+
+  <!-- footdetails Start -->
+  <div id="footdetails">
+    <hr>
+    <div>
+      <h4>POPULAR CATEGORIES:</h4>
+      <p>Sunflower Oils, Wheat Atta, Ghee, Milk, Health Drinks, Flakes, Organic F&V, Namkeen, Eggs, Floor Cleaners,
+        Other Juices, Leafy Vegetables, Frozen Veg Food, Diapers & Wipes,</p>
+    </div>
+    <div>
+      <h4>POPULAR BRANDS:</h4>
+      <p>
+        Amul, Nescafe , MTR, RED BULL , elite cake, Pediasure, Yummiez, Yera, Yakult, Britannia, Wow Momo, Fortune ,
+        Haldirams , Ferrero, Lays, Patanjali, McCain, kwality walls, Cadbury Dairy Milk, Pedigree,</p>
+    </div>
+    <div>
+      <h4>CITIES WE SERVE:</h4>
+      <p>Bangalore, Hyderabad, Mumbai, Pune, Chennai, Delhi, Mysore, Madurai, Coimbatore, Vijayawada-Guntur, Kolkata,
+        Ahmedabad-Gandhinagar, Nashik Business, Lucknow-Kanpur, Gurgaon, Vadodara, Visakhapatnam, Surat, Nagpur,
+        Patna,
+        Indore, Chandigarh Tricity, Jaipur, Bhopal, Noida-Ghaziabad, Kochi, Krishna District, Bhubaneshwar-Cuttack,
+        Guwahati, Renigunta, Hubli, Davanagere, Trichy, Amravati, Raipur, Rajkot, Gwalior, Bareilly, Allahabad,
+        Hyderabad Rural, Bangalore Rural, Chennai Rural, Vizag Rural, Lucknow Rural, Noida Rural, Ahmedabad Rural,
+        Bhopal Rural, Bhubaneswar Rural, Coimbatore Rural, Chandigarh Rural, Gurugram Rural, Guwahati Rural, Indore
+        Rural, Kochi Rural, Kolkata Rural, Mumbai Rural, Mysore Rural, Nagpur Rural, Patna Rural, Pune Rural, Surat
+        Rural, Vadodara Rural, Jaipur Rural, Ranchi, Nashik, Agra, Kozhikode, Amritsar, </p>
+    </div>
+    <div id="mobplay">
+      <h4>PAYMENT OPTIONS:</h4>
+      <div><img src="https://www.bbassets.com/static/v2659/custPage/build/content/img/footersprite.png" alt=""></div>
+    </div>
+  </div>
+
+  <!-- footdetails End -->
+  <!-- copyrights Start -->
+  <div id="copyrights">
+    <div>
+      <p>Copyright © 2022-2024 Supermarket Grocery Supplies Pvt Ltd</p>
+    </div>
+  </div>
+  <!-- copyrights End -->
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+  }
+
+
+  $(document).ready(function () {
+    $(".hamburger").click(function () {
+      $(".slide-menu").animate({ left: "0" });
+    });
+
+    $(".slide-menu").click(function () {
+      $(".slide-menu").animate({ left: "-250px" });
+    });
+  });
+
+
+
+  var fruitsarr = [
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000203_16-fresho-tomato-local.jpg?tr=w-1920,q=80",
+      brand: "Fresho",
+      name: "Tomato (Loose)",
+      strickprice: 30.26,
+      mrp: 22.5,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/30001006_8-fresho-alphonso-mango-ratnagiri.jpg?tr=w-1920,q=80",
+      brand: "Fresho",
+      name: "Mango Ratnagiri",
+      strickprice: 822.37,
+      mrp: 625,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000207_24-fresho-watermelon-small.jpg?tr=w-1920,q=80",
+      brand: "Fresho",
+      name: "Watermelon - Small",
+      strickprice: 65.79,
+      mrp: 50,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000142_16-fresho-ladies-finger.jpg?tr=w-1920,q=80g",
+      brand: "Fresho",
+      name: "Ladies Finger(Loose)",
+      strickprice: 65.79,
+      mrp: 50,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000025_27-fresho-banana-robusta.jpg?tr=w-1920,q=80",
+      brand: "bb Combo",
+      name: "Banana - Robusta",
+      strickprice: 67.11,
+      mrp: 51,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/40033819_29-fresho-apple-shimla.jpg?tr=w-1920,q=80",
+      brand: "bb Combo",
+      name: "Apple - Shimla",
+      strickprice: 169.74,
+      mrp: 129,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000273_16-fresho-mushrooms-button.jpg?tr=w-1920,q=80",
+      brand: "bb Combo",
+      name: "Mushroom - Button",
+      strickprice: 73.68,
+      mrp: 49,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000066_25-fresho-cabbage.jpg?tr=w-1920,q=80",
+      brand: "bb Combo",
+      name: "Cabbage",
+      strickprice: 31.58,
+      mrp: 24,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/20000732_11-fresho-lemon.jpg?tr=w-1920,q=80",
+      brand: "Hoovu Fresh",
+      name: "Lemon(Loose)",
+      strickprice: 77.63,
+      mrp: 49,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000063_20-fresho-broccoli.jpg?tr=w-1920,q=80",
+      brand: "Hoovu Fresh",
+      name: "Broccoli",
+      strickprice: 94.74,
+      mrp: 72,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000067_23-fresho-capsicum-green.jpg?tr=w-1920,q=80",
+      brand: "Hoovu Fresh",
+      name: "Capsicum - Green(Loose)",
+      strickprice: 151.32,
+      mrp: 120,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000588_12-fresho-raw-mango.jpg?tr=w-1920,q=80",
+      brand: "Hoovu Fresh",
+      name: "Raw Mango(Loose)",
+      strickprice: 72.33,
+      mrp: 52,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000338_13-fresho-ginger.jpg?tr=w-1920,q=80",
+      brand: "Organic",
+      name: "Ginger (Loose)",
+      strickprice: 294.74,
+      mrp: 101.50,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000668_12-fresho-cucumber-english.jpg?tr=w-1920,q=80",
+      brand: "Organic",
+      name: "Cucumber - English(Loose)",
+      strickprice: 84.71,
+      mrp: 64,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/30009286_7-fresho-blueberry.jpg?tr=w-1920,q=80",
+      brand: "Organic",
+      name: "Blueberry(Loose)",
+      strickprice: 235.10,
+      mrp: 179,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000048_21-fresho-bitter-gourd.jpg?tr=w-1920,q=80",
+      brand: "Organic",
+      name: "Bitter Gourd(Loose)",
+      strickprice: 84.21,
+      mrp: 64,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/20000705_10-fresho-brinjal-purple-long.jpg?tr=w-1920,q=80",
+      brand: "Shades of Spring",
+      name: "Brinjal Purple,Long(Loose)",
+      strickprice: 84.21,
+      mrp: 64,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000036_20-fresho-beans-broad.jpg?tr=w-1920,q=80",
+      brand: "Shades of Spring",
+      name: "Beans Broad",
+      strickprice: 89.47,
+      mrp: 68,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000175_15-fresho-ridge-gourd.jpg?tr=w-1920,q=80",
+      brand: "Shades of Spring",
+      name: "Ridge Gourd",
+      strickprice: 84.21,
+      mrp: 64,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/40205742_1-fresho-cauliflower-small.jpg?tr=w-1920,q=80",
+      brand: "Shades of Spring",
+      name: "Cauliflower - Small",
+      strickprice: 100,
+      mrp: 83,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000141_25-fresho-muskmelon-netted-small.jpg?tr=w-1920,q=80",
+      brand: "Trikaya",
+      name: "Muskmelon - Netted Small",
+      strickprice: 120,
+      mrp: 90,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000093_16-fresho-coconut-medium.jpg?tr=w-1920,q=80",
+      brand: "Trikaya",
+      name: "Coconut - Medium",
+      strickprice: 38.16,
+      mrp: 29,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000045_18-fresho-beetroot.jpg?tr=w-1920,q=80",
+      brand: "Trikaya",
+      name: "Beetroot(Loose)",
+      strickprice: 39.47,
+      mrp: 30,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+      brand: "Trikaya",
+      name: "Onion (Loose)",
+      strickprice: 151.32,
+      mrp: 120,
+    },
+
+  ];
+
+  fruitsarr.map(function (elem) {
+    var div = document.createElement("div");
+
+    var image = document.createElement("img");
+    image.setAttribute("src", elem.img_url);
+
+
+    var brand = document.createElement("p");
+    brand.textContent = elem.brand;
+
+    var name = document.createElement("h3");
+    name.textContent = elem.name;
+
+    var priceBox = document.createElement("div");
+
+    var j_mrp = document.createElement("p");
+    j_mrp.textContent = "MRP-";
+
+    var strickprice = document.createElement("h4");
+    strickprice.textContent = "Rs." + elem.strickprice;
+
+    var mrp = document.createElement("h4");
+    mrp.textContent = "Rs. " + elem.mrp;
+
+    // started 
+
+    var delivery = document.createElement("p");
+    delivery.innerText = "Standard Delivery: Today 2:00PM - 9:30PM";
+
+    var divCartqty_parent = document.createElement("div");
+    divCartqty_parent.setAttribute("id", "crtqty")
+
+    var divQty_child1 = document.createElement("div");
+    divQty_child1.setAttribute("id", "qty")
+
+    var spanQty = document.createElement("span");
+    spanQty.innerText = "Qty";
+
+    var inputQty = document.createElement("input");
+    inputQty.setAttribute("placeholder", "Per Kg")
+
+    var divQty_child2 = document.createElement("div");
+    divQty_child2.setAttribute("id", "cart")
+
+    var cartBtn = document.createElement("button");
+    cartBtn.innerHTML = '<i class="fa-solid fa-basket-shopping"></i>' + " Cart";
+
+
+    // divQty_child1.append(spanQty, inputQty);
+    // divQty_child2.append(cartBtn)
+    // divCartqty_parent.append(divQty_child1, divQty_child2);
+    priceBox.append(j_mrp, strickprice, mrp);
+    div.append(image, brand, name, priceBox, delivery);
+    document.querySelector("#parent").append(div);
+  })
+
+
+
+  function leftScroll() {
+    const left = document.querySelector("#parent");
+    left.scrollBy(-200, 0);
+  }
+  function rightScroll() {
+    const right = document.querySelector("#parent");
+    right.scrollBy(200, 0);
+  }
+
+  var storedValue = localStorage.getItem("name1");
+  var headingElement = document.getElementById("show_name");
+  headingElement.textContent = storedValue;
+
+</script>
