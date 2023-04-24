@@ -23,6 +23,7 @@
     #topnav {
       display: flex;
       justify-content: flex-end;
+      align-items: center;
       gap: 15px;
     }
 
@@ -56,9 +57,10 @@
 
     .dropdown-content a {
       color: black;
-      padding: 12px 16px;
+      padding: 5px 16px;
       text-decoration: none;
       display: block;
+      border-bottom: 1px solid #dad8d8;
     }
 
     .dropdown-content a:hover {
@@ -91,6 +93,10 @@
       justify-content: space-between;
       flex: 1;
     }
+    #childmid2>a {
+            color: black;
+            text-decoration: none;
+        }
 
     #mybasket {
       display: flex;
@@ -159,6 +165,11 @@
       border: 1px solid rgb(196, 192, 192);
     }
 
+    #childmid2>a{
+      color: black;
+      text-decoration: none;
+    }
+
     #childbottom2>#offers {
       color: black;
       padding: 8px 16px;
@@ -190,9 +201,10 @@
 
     .dropdown-content_bottomnav a {
       color: black;
-      padding: 12px 16px;
+      padding: 5px 16px;
       text-decoration: none;
       display: block;
+      border-bottom: 1px solid #dad8d8;
     }
 
     .dropdown-content_bottomnav a:hover {
@@ -577,10 +589,14 @@
       left: -250px;
       width: 250px;
       height: 100%;
-      background-color: #333;
+      background-color: #689f38;
       padding-top: 60px;
       transition: all 0.3s ease;
       z-index: 9999;
+    }
+
+    .slide-menu>h4 {
+      color: #fff;
     }
 
     .slide-menu ul {
@@ -589,13 +605,14 @@
     }
 
     .slide-menu ul li {
-      padding: 15px;
+      padding: 5px;
+      border-bottom: 1px solid #dad8d8;
     }
 
     .slide-menu ul li a {
       color: #fff;
       text-decoration: none;
-      font-size: 20px;
+      font-size: 14px;
     }
 
     /* mobilenavbar CSS end */
@@ -709,6 +726,7 @@
 
     #parent>div>div>p {
       font-size: 10px;
+      margin: 0;
     }
 
     #parent>div>div>h4 {
@@ -790,6 +808,7 @@
       #parent>div {
         width: 28%;
       }
+
       /* parent product css end */
 
       nav {
@@ -1090,6 +1109,15 @@
 
       /* copyrights CSS End */
     }
+
+    #show_name {
+
+      font-size: 15px;
+    }
+
+    #username>p {
+      margin: 0 -15px 0 0;
+    }
   </style>
 </head>
 
@@ -1104,6 +1132,9 @@
         <span><i class="fa-solid fa-location-dot"></i></span> 560004,
         Bangalore <span><i class="fa-solid fa-angle-down"></i></span>
       </p>
+      <div id="username">
+        <p id="show_name"></p>
+      </div>
       <div class="dropdown">
         <button class="dropbtn">
           BigBasketeer<i class="fa fa-caret-down"></i>
@@ -1112,11 +1143,11 @@
           <a href="#">My Account</a>
           <a href="#">My Basket</a>
           <a href="#">My Orders</a>
-          <a href="">Wallet</a>
+          <a href="#">Wallet</a>
           <a href="#">Rewards</a>
           <a href="#">Ask Us</a>
           <a href="#">Customer Service</a>
-          <a href="#">logout</a>
+          <a href="signup.html">Signup/Login</a>
         </div>
       </div>
     </div>
@@ -1133,14 +1164,16 @@
             </form>
           </div>
         </div>
-        <div id="mybasket">
-          <div id="fntbasket"><span><i class="fa-solid fa-basket-shopping"></i></span></i></div>
+        <a href="newcart.html">
+          <div id="mybasket">
+            <div id="fntbasket"><span><i class="fa-solid fa-basket-shopping"></i></span></i></div>
 
-          <div id="colbasket">
-            <p>My Basket</p>
-            <p>0 items</p>
+            <div id="colbasket">
+              <p>My Basket</p>
+              <!-- <p>0 items</p> -->
+            </div>
           </div>
-        </div>
+        </a>
 
       </div>
 
@@ -1152,14 +1185,18 @@
             SHOP BY CATEGORY <i class="fa fa-caret-down lfsd"></i>
           </button>
           <div class="dropdown-content_bottomnav">
-            <a href="#">My Account</a>
-            <a href="#">My Basket</a>
-            <a href="#">My Orders</a>
-            <a href="">Wallet</a>
-            <a href="#">Rewards</a>
-            <a href="#">Ask Us</a>
-            <a href="#">Customer Service</a>
-            <a href="#">logout</a>
+            <a href="productFruitandVegetable.html">Fruits & Vegetables</a>
+            <a href="productBakery.html">Bakery, Cakes & Dairy</a>
+            <a href="#">Foodgrains, Oil & Masala</a>
+            <a href="#">Beverages</a>
+            <a href="#">Snacks & Branded Foods</a>
+            <a href="#">Beauty & Hygiene</a>
+            <a href="#">Cleaning & Household</a>
+            <a href="#">Kitchen, Garden & Pets </a>
+            <a href="#">Eggs, Meat & Fish</a>
+            <a href="#">Gourmet & World Food</a>
+            <a href="#">Baby Care</a>
+            <a href="#">View All</a>
           </div>
         </div>
       </div>
@@ -1197,10 +1234,20 @@
   </nav>
 
   <div class="slide-menu">
+    <h4>SHOP BY CATEGORY</h4>
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Contact Us</a></li>
+      <li><a href="#">Fruits & Vegetables</a></li>
+      <li><a href="#">Bakery, Cakes & Dairy</a></li>
+      <li><a href="#">Foodgrains, Oil & Masala</a></li>
+      <li><a href="#">Beverages</a></li>
+      <li><a href="#">Snacks & Branded Foods</a></li>
+      <li><a href="#">Beauty & Hygiene</a></li>
+      <li><a href="#">Cleaning & Household</a></li>
+      <li><a href="#">Kitchen, Garden & Pets </a></li>
+      <li><a href="#">Eggs, Meat & Fish</a></li>
+      <li><a href="#">Gourmet & World Food</a></li>
+      <li><a href="#">Baby Care</a></li>
+      <li><a href="#">View All</a></li>
     </ul>
   </div>
   <!-- Mobile NavBar End -->
@@ -1858,99 +1905,169 @@
 
   var fruitsarr = [
     {
-      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000203_16-fresho-tomato-local.jpg?tr=w-1920,q=80",
+      brand: "Fresho",
+      name: "Tomato (Loose)",
+      strickprice: 30.26,
+      mrp: 22.5,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/30001006_8-fresho-alphonso-mango-ratnagiri.jpg?tr=w-1920,q=80",
+      brand: "Fresho",
+      name: "Mango Ratnagiri",
+      strickprice: 822.37,
+      mrp: 625,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000207_24-fresho-watermelon-small.jpg?tr=w-1920,q=80",
+      brand: "Fresho",
+      name: "Watermelon - Small",
+      strickprice: 65.79,
+      mrp: 50,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000142_16-fresho-ladies-finger.jpg?tr=w-1920,q=80g",
+      brand: "Fresho",
+      name: "Ladies Finger(Loose)",
+      strickprice: 65.79,
+      mrp: 50,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000025_27-fresho-banana-robusta.jpg?tr=w-1920,q=80",
       brand: "bb Combo",
-      name: "Onion (Loose)",
+      name: "Banana - Robusta",
+      strickprice: 67.11,
+      mrp: 51,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/40033819_29-fresho-apple-shimla.jpg?tr=w-1920,q=80",
+      brand: "bb Combo",
+      name: "Apple - Shimla",
+      strickprice: 169.74,
+      mrp: 129,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000273_16-fresho-mushrooms-button.jpg?tr=w-1920,q=80",
+      brand: "bb Combo",
+      name: "Mushroom - Button",
+      strickprice: 73.68,
+      mrp: 49,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000066_25-fresho-cabbage.jpg?tr=w-1920,q=80",
+      brand: "bb Combo",
+      name: "Cabbage",
+      strickprice: 31.58,
+      mrp: 24,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/20000732_11-fresho-lemon.jpg?tr=w-1920,q=80",
+      brand: "Hoovu Fresh",
+      name: "Lemon(Loose)",
+      strickprice: 77.63,
+      mrp: 49,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000063_20-fresho-broccoli.jpg?tr=w-1920,q=80",
+      brand: "Hoovu Fresh",
+      name: "Broccoli",
+      strickprice: 94.74,
+      mrp: 72,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000067_23-fresho-capsicum-green.jpg?tr=w-1920,q=80",
+      brand: "Hoovu Fresh",
+      name: "Capsicum - Green(Loose)",
       strickprice: 151.32,
       mrp: 120,
     },
     {
-      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-      brand: "bb Combo",
-      name: "Onion (Loose)",
-      strickprice: 151.32,
-      mrp: 120,
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000588_12-fresho-raw-mango.jpg?tr=w-1920,q=80",
+      brand: "Hoovu Fresh",
+      name: "Raw Mango(Loose)",
+      strickprice: 72.33,
+      mrp: 52,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000338_13-fresho-ginger.jpg?tr=w-1920,q=80",
+      brand: "Organic",
+      name: "Ginger (Loose)",
+      strickprice: 294.74,
+      mrp: 101.50,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000668_12-fresho-cucumber-english.jpg?tr=w-1920,q=80",
+      brand: "Organic",
+      name: "Cucumber - English(Loose)",
+      strickprice: 84.71,
+      mrp: 64,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/30009286_7-fresho-blueberry.jpg?tr=w-1920,q=80",
+      brand: "Organic",
+      name: "Blueberry(Loose)",
+      strickprice: 235.10,
+      mrp: 179,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000048_21-fresho-bitter-gourd.jpg?tr=w-1920,q=80",
+      brand: "Organic",
+      name: "Bitter Gourd(Loose)",
+      strickprice: 84.21,
+      mrp: 64,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/20000705_10-fresho-brinjal-purple-long.jpg?tr=w-1920,q=80",
+      brand: "Shades of Spring",
+      name: "Brinjal Purple,Long(Loose)",
+      strickprice: 84.21,
+      mrp: 64,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000036_20-fresho-beans-broad.jpg?tr=w-1920,q=80",
+      brand: "Shades of Spring",
+      name: "Beans Broad",
+      strickprice: 89.47,
+      mrp: 68,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000175_15-fresho-ridge-gourd.jpg?tr=w-1920,q=80",
+      brand: "Shades of Spring",
+      name: "Ridge Gourd",
+      strickprice: 84.21,
+      mrp: 64,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/40205742_1-fresho-cauliflower-small.jpg?tr=w-1920,q=80",
+      brand: "Shades of Spring",
+      name: "Cauliflower - Small",
+      strickprice: 100,
+      mrp: 83,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000141_25-fresho-muskmelon-netted-small.jpg?tr=w-1920,q=80",
+      brand: "Trikaya",
+      name: "Muskmelon - Netted Small",
+      strickprice: 120,
+      mrp: 90,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000093_16-fresho-coconut-medium.jpg?tr=w-1920,q=80",
+      brand: "Trikaya",
+      name: "Coconut - Medium",
+      strickprice: 38.16,
+      mrp: 29,
+    },
+    {
+      img_url: "https://www.bigbasket.com/media/uploads/p/m/10000045_18-fresho-beetroot.jpg?tr=w-1920,q=80",
+      brand: "Trikaya",
+      name: "Beetroot(Loose)",
+      strickprice: 39.47,
+      mrp: 30,
     },
     {
       img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-      brand: "bb Combo",
-      name: "Onion (Loose)",
-      strickprice: 151.32,
-      mrp: 120,
-    },
-    {
-      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-      brand: "bb Combo",
-      name: "Onion (Loose)",
-      strickprice: 151.32,
-      mrp: 120,
-    },
-    {
-      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-      brand: "bb Combo",
-      name: "Onion (Loose)",
-      strickprice: 151.32,
-      mrp: 120,
-    },
-    {
-      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-      brand: "bb Combo",
-      name: "Onion (Loose)",
-      strickprice: 151.32,
-      mrp: 120,
-    },
-    {
-      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-      brand: "bb Combo",
-      name: "Onion (Loose)",
-      strickprice: 151.32,
-      mrp: 120,
-    },
-    {
-      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-      brand: "bb Combo",
-      name: "Onion (Loose)",
-      strickprice: 151.32,
-      mrp: 120,
-    },
-    {
-      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-      brand: "bb Combo",
-      name: "Onion (Loose)",
-      strickprice: 151.32,
-      mrp: 120,
-    },
-    {
-      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-      brand: "bb Combo",
-      name: "Onion (Loose)",
-      strickprice: 151.32,
-      mrp: 120,
-    },
-    {
-      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-      brand: "bb Combo",
-      name: "Onion (Loose)",
-      strickprice: 151.32,
-      mrp: 120,
-    },
-    {
-      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-      brand: "bb Combo",
-      name: "Onion (Loose)",
-      strickprice: 151.32,
-      mrp: 120,
-    },
-    {
-      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-      brand: "bb Combo",
-      name: "Onion (Loose)",
-      strickprice: 151.32,
-      mrp: 120,
-    },
-    {
-      img_url: "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
-      brand: "bb Combo",
+      brand: "Trikaya",
       name: "Onion (Loose)",
       strickprice: 151.32,
       mrp: 120,
@@ -2006,11 +2123,11 @@
     cartBtn.innerHTML = '<i class="fa-solid fa-basket-shopping"></i>' + " Cart";
 
 
-    divQty_child1.append(spanQty, inputQty);
-    divQty_child2.append(cartBtn)
-    divCartqty_parent.append(divQty_child1, divQty_child2);
+    // divQty_child1.append(spanQty, inputQty);
+    // divQty_child2.append(cartBtn)
+    // divCartqty_parent.append(divQty_child1, divQty_child2);
     priceBox.append(j_mrp, strickprice, mrp);
-    div.append(image, brand, name, priceBox, delivery, divCartqty_parent);
+    div.append(image, brand, name, priceBox, delivery);
     document.querySelector("#parent").append(div);
   })
 
@@ -2024,5 +2141,9 @@
     const right = document.querySelector("#parent");
     right.scrollBy(200, 0);
   }
+
+  var storedValue = localStorage.getItem("name1");
+  var headingElement = document.getElementById("show_name");
+  headingElement.textContent = storedValue;
 
 </script>
