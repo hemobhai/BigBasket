@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signupPage</title>
+    <style>
+        /* start login css */
+
+        #container {
+            width: 25%;
+            margin: 70px auto;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 25px;
+        }
+
+        #container>h3 {
+            text-align: center;
+            color: #84c225;
+            /* margin-bottom: 70px; */
+        }
+
+        #container>div {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        #container>form>p {
+            text-align: center;
+            margin: 8px 0;
+        }
+
+        #container>form>input {
+            width: 93.5%;
+            border-radius: 5px;
+            padding: 10px;
+            border: 1px solid grey;
+        }
+
+        /* #container>form {
+            margin-bottom: 130px;
+        } */
+
+        #container>div>a>button {
+            width: 100%;
+            margin: 8px auto;
+            padding: 10px;
+        }
+
+        #container>div>a:first-child>button {
+            background-color: #84c225;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #container>div>a:first-child>button:hover {
+            background-color: #436a08;
+        }
+
+
+        #container>p {
+            text-align: center;
+        }
+
+        #container>form>div {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #container>form>div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #container>form>div>input {
+            padding: 8px;
+        }
+
+        #container>form>div>p {
+            margin-bottom: 6px;
+        }
+
+        #container>form>div:nth-child(2) {
+            margin-top: 100px;
+        }
+        #container>form>div:nth-child(2)>input {
+            background-color: #84c225;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="container">
+        <h3>Almost there</h3>
+        <p>Help us to know you better!</p>
+        <form>
+            <div>
+
+                <p>First Name</p>
+                <input type="text" id="first_name" required>
+
+
+                <p>Last Name</p>
+                <input type="text" id="last_name" required>
+
+                <p>Mobile Number</p>
+                <input type="number" id="mobile" required>
+
+                <p>Email</p>
+                <input type="text" id="email" required>
+                
+            </div>
+
+            <div>
+                <!-- <a href="index.html"><button></button></a> -->
+                <input type="submit" placeholder="Start Shopping">
+            </div>
+        </form>
+</body>
+
+</html>
+<script>
+    // document.querySelector('form').addEventListener('submit', function(event) {
+    //     event.preventDefault();
+    //     storeDataToLocalStorage();
+    // });
+
+    // // Function to store data to local storage
+    // function storeDataToLocalStorage() {
+    //     var firstName = document.getElementById('first_name').value;
+    //     localStorage.setItem('firstName', firstName);
+    //     console.log(firstName);
+    // }
+
+
+    const form = document.querySelector('form');
+    // Saving data on localstorage
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        var first_name = document.querySelector('#first_name').value;
+        var last_name = document.querySelector('#last_name').value;
+        var mobile = document.querySelector('#mobile').value;
+        var email = document.querySelector('#email').value;
+
+        console.log(first_name, last_name, email);
+        let creds = JSON.parse(localStorage.getItem('creds')) || [];
+
+        const newcreds = {
+            first_name: first_name,
+            last_name: last_name,
+            mobile: mobile,
+            email: email,
+        };
+
+        creds.push(newcreds);
+        localStorage.setItem('creds', JSON.stringify(creds));
+
+        //name for home
+        var str = localStorage.getItem('name1');
+        localStorage.setItem("name1", first_name);
+        console.log(str);
+
+        //to compare mobile number to the login page
+        var number = localStorage.getItem('mobile1');
+        localStorage.setItem("mobile1", mobile);
+
+        // localStorage.setItem('creds', JSON.stringify(creds));
+
+        window.location.href = "login.html"
+
+    });
+
+</script>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP page</title>
+    <style>
+/* start login css */
+
+        #container {
+            width: 25%;
+            margin: 70px auto;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 25px;
+        }
+
+        #container>h3 {
+            text-align: center;
+            color: #84c225;
+            margin-bottom: 70px;
+        }
+
+        #container>div {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        #container>form>p {
+            text-align: center;
+            margin: 8px 0;
+        }
+
+        #container>form>input {
+            width: 93.5%;
+            border-radius: 5px;
+            padding: 10px;
+            border: 1px solid grey;
+        }
+
+        #container>form {
+            margin-bottom: 130px;
+        }
+
+        #container>div>a>button {
+            width: 100%;
+            margin: 8px auto;
+            padding: 10px;
+        }
+
+        #container>div>a:first-child>button {
+            background-color: white;
+            color: black;
+            border: 1px solid grey;
+            border-radius: 5px;
+        }
+
+        #container>div>a:first-child>button:hover {
+            background-color: rgb(216, 209, 209);
+        }
+
+        #container>div>a:nth-child(2)>button {
+            background-color: #84c225;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #container > h4{
+            text-align: center;
+            margin-top: 5px;
+        }
+        #container > p{
+            margin-bottom: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <h3>Varify Mobile Number</h3>
+        <p>Please check the OTP sent to your mobile number</p>
+        <h4 id="creden"></h4>
+        <form>
+            <p>Enter OTP</p>
+            <input type="text" placeholder="Enter Your OTP">
+        </form>
+        <div>
+            <a href="#"><button>Resend OTP</button> </a>
+            <a href="index.html"><button>Varify & Continue</button></a>
+        </div>
+
+    </div>
+</body>
+</html>
+<script>
+
+    // to print the value of email in the h4 tag
+    var storedValue = localStorage.getItem("mobile2");
+    var headingElement = document.getElementById("creden");
+    headingElement.textContent = storedValue;
+
+    // var mobile1 = localStorage.getItem("mobileNumber");
+    // var mobile2 = 
+
+</script>

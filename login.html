@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login & signin</title>
+    <style>
+        /* start login css */
+
+        #container {
+            width: 25%;
+            margin: 70px auto;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 25px;
+        }
+
+        #container>h3 {
+            text-align: center;
+            color: #84c225;
+            margin-bottom: 70px;
+        }
+
+        #container>div {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        #container>form>p {
+            text-align: center;
+            margin: 8px 0;
+        }
+
+        #container>form>input {
+            width: 93.5%;
+            border-radius: 5px;
+            padding: 10px;
+            border: 1px solid grey;
+        }
+
+        #container>form {
+            margin-bottom: 130px;
+        }
+
+        #container>div>a>button {
+            width: 100%;
+            margin: 8px auto;
+            padding: 10px;
+        }
+
+        #container>div>a:first-child>button {
+            background-color: white;
+            color: black;
+            border: 1px solid grey;
+            border-radius: 5px;
+        }
+
+        #container>div>a:first-child>button:hover {
+            background-color: rgb(216, 209, 209);
+        }
+
+        #container>div>a:nth-child(2)>button {
+            background-color: #84c225;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #container>p {
+            font-size: 12px;
+        }
+
+        #container>p>span:first-child {
+            color: blue;
+        }
+
+        #container>p>span:nth-child(2) {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="container">
+        <h3>LOGIN/SIGN UP</h3>
+        <form id="mobile_login_form">
+            <p>Enter Mobile Number(10-Digit)</p>
+            <input type="text" id="mobile_number">
+        </form>
+        <div>
+            <a href="login_using_email.html"><button>Login using Email Address</button> </a>
+            <a href="otp.html"><button>Continue</button></a>
+        </div>
+
+        <p>By Continuing, I accept TCP- Bigbasket's <span>Terms and Conditions</span>and<span>Privacy Policy</span>
+        </p>
+    </div>
+</body>
+
+</html>
+<script>
+
+    document.querySelector('#container > div > a:nth-child(2) > button').addEventListener('click', function() {
+        storeDataToLocalStorage();
+    });
+    // Function to store data to local storage
+    function storeDataToLocalStorage() {
+        var mobileNumber = document.getElementById('mobile_number').value;
+        localStorage.setItem('mobile2', mobileNumber);
+    }
+
+</script>
