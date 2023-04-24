@@ -4,132 +4,104 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dummy OTP page</title>
+    <title>OTP page</title>
     <style>
+/* start login css */
 
-        .form-container {
-        margin-top: 30px;
-        max-width: 300px;
-        padding: 100px 0 0 50px;
+        #container {
+            width: 25%;
+            margin: 70px auto;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 25px;
         }
 
-        /* Full-width input fields */
-        .form-container{
-        width: 100%;
-        padding: 15px;
-        margin: auto;
-        margin-top: 150px;
-        border: none;
-        text-align: center;
-        border: 2px solid black;
-        }
-
-        /* Set a style for the submit/login button */
-        .form-container .btn {
-        background-color: #9dce51;;
-        color: white;
-        padding: 16px 20px;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-        margin-bottom:10px;
-        }
-
-        /* Add a red background color to the cancel button */
-        h3{
-            margin:auto;
-            padding-bottom: 25px;
-            color:#9dce51;
+        #container>h3 {
             text-align: center;
+            color: #84c225;
+            margin-bottom: 70px;
         }
-        p {
-            color:grey;
+
+        #container>div {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
         }
-        #resend_otp{
-            padding: 2px 2px 2px 2px;
+
+        #container>form>p {
             text-align: center;
-            margin: 5px 0 10px 0;
+            margin: 8px 0;
         }
-        #otp_value_input{
-            font-weight:bold;
-            word-spacing: 20px;
+
+        #container>form>input {
+            width: 93.5%;
+            border-radius: 5px;
+            padding: 10px;
+            border: 1px solid grey;
         }
-        #hrLine {
-            margin-bottom: 20px;
-            margin-top: -5px;
+
+        #container>form {
+            margin-bottom: 130px;
         }
-        #otp_input {
-            width:90%;
-            text-align: center;
+
+        #container>div>a>button {
+            width: 100%;
+            margin: 8px auto;
+            padding: 10px;
         }
-        #resend_otp {
-            border: 1px solid black;
+
+        #container>div>a:first-child>button {
             background-color: white;
-            font-weight: bold;
-            padding:5px;
+            color: black;
+            border: 1px solid grey;
+            border-radius: 5px;
         }
+
+        #container>div>a:first-child>button:hover {
+            background-color: rgb(216, 209, 209);
+        }
+
+        #container>div>a:nth-child(2)>button {
+            background-color: #84c225;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #container > h4{
+            text-align: center;
+            margin-top: 5px;
+        }
+        #container > p{
+            margin-bottom: 5px;
+        }
+        
     </style>
 </head>
 <body>
-    <main>
-        <div id="myForm">
 
-            <!-- i am make changes in it -->
-            <form action="signup.html" id="otp_form" class="form-container">
-
-                <h3>Varify Mobile Number</h3>
-                <p>Please check the OTP sent to your mobile number</p>
-                <h4 id="creden"></h4>
-                <p>Enter OTP</p>
-
-                <input type="text" id="otp_input" name="OTP" required>
-                <hr id="hrLine">
-
-                <button id="resend_otp">Resend OTP</button>
-
-                <input type="submit" class="btn" value="Varify & Continue"/>
-            </form>
+    <div id="container">
+        <h3>Varify Mobile Number</h3>
+        <p>Please check the OTP sent to your mobile number</p>
+        <h4 id="creden"></h4>
+        <form>
+            <p>Enter OTP</p>
+            <input type="text" placeholder="Enter Your OTP">
+        </form>
+        <div>
+            <a href="#"><button>Resend OTP</button> </a>
+            <a href="index.html"><button>Varify & Continue</button></a>
         </div>
-    </main>
+
+    </div>
 </body>
 </html>
 <script>
 
     // to print the value of email in the h4 tag
-    var storedValue = localStorage.getItem("email_2");
+    var storedValue = localStorage.getItem("mobile2");
     var headingElement = document.getElementById("creden");
     headingElement.textContent = storedValue;
 
-    var storedValue = localStorage.getItem("mobile_2");
-    var headingElement = document.getElementById("creden");
-    headingElement.textContent = storedValue;
+    // var mobile1 = localStorage.getItem("mobileNumber");
+    // var mobile2 = 
 
-
-
-    // #########  code for the check if account is already created or not #########
-
-        // var form = document.getElementById("otp_form");
-        // form.addEventListener('submit', function(event) {
-        //     event.preventDefault();
-        
-        //     var credential = document.querySelector('#creden').value;
-            
-        //     var cred = JSON.parse(localStorage.getItem('Cred'));
-        //         var str=localStorage.getItem("name1")
-        //     if (cred !== null) {
-        //         var matchingCred = cred.find(account => cred.email === credential);
-        
-        //         if (matchingCred) {
-
-        //             //redirect to the home page
-        //             window.location.href = "home.html"
-                
-        //         } else {
-        //             //  heading.textContent = 'Wrong Credentials';
-                
-        //             //redirect to the sign up page
-        //             window.location.href = "dummySignup.html"
-        //         }
-        //     }
-        // });
 </script>

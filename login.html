@@ -1,124 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login & signin</title>
     <style>
-        .form-container {
-        margin:auto;
-        max-width: 300px;
-        padding: 100px 0 50px 0;
-        background-color: white;
-        border: 1px solid black;
-        text-align: center;
+        /* start login css */
+
+        #container {
+            width: 25%;
+            margin: 70px auto;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 25px;
         }
-        #signin{
-            margin: 100px auto;
-            padding:5px;
-        }
-        #btn {
-        background-color: #9dce51;
-        color: white;
-        padding: 16px 20px;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-        margin-bottom:10px;
-        }
-        h3{ 
-            margin-top:-60px;
-            color:#9dce51;
+
+        #container>h3 {
             text-align: center;
+            color: #84c225;
+            margin-bottom: 70px;
         }
-        p {
-            color:grey;
+
+        #container>div {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
         }
-        .email_login_btn {
-            font-weight: bold;
+
+        #container>form>p {
+            text-align: center;
+            margin: 8px 0;
+        }
+
+        #container>form>input {
+            width: 93.5%;
+            border-radius: 5px;
+            padding: 10px;
+            border: 1px solid grey;
+        }
+
+        #container>form {
+            margin-bottom: 130px;
+        }
+
+        #container>div>a>button {
+            width: 100%;
+            margin: 8px auto;
+            padding: 10px;
+        }
+
+        #container>div>a:first-child>button {
             background-color: white;
-            display: inline-block;
-            padding: 16px 20px;
-            border: 1px solid black;
-            width: 85%;
-            margin-bottom: 10px;
-            text-decoration: none;
             color: black;
-            cursor: pointer;
+            border: 1px solid grey;
+            border-radius: 5px;
         }
-        #mobile_number{
-            border:none;
-            width:90%;
-            padding:5px 15px 5px 15px;
-            text-align: center;
-            background-color: white;
+
+        #container>div>a:first-child>button:hover {
+            background-color: rgb(216, 209, 209);
         }
-        #hrLine {
-            margin-top:-5px;
-            margin-bottom: 100px;
+
+        #container>div>a:nth-child(2)>button {
+            background-color: #84c225;
+            color: white;
+            border: none;
+            border-radius: 5px;
         }
-        #last_p_tag {
-            text-align: center;
+
+        #container>p {
+            font-size: 12px;
+        }
+
+        #container>p>span:first-child {
+            color: blue;
+        }
+
+        #container>p>span:nth-child(2) {
+            color: blue;
         }
     </style>
 </head>
+
 <body>
-    <main>
-        <div id="signin">
-          <form id="mobile_login_form" class="form-container">
-            <h3>LOGIN/SIGN UP</h3>
-            <p>Enter Mobile Number(10-Digit)<p>
-            <input type="mobile" id="mobile_number" required />
-            <hr id="hrLine">
-           
-            <a href="login_using_email.html" class="email_login_btn">Login using Email Address</a>
-           
-            <a href="otp.html"><input id="btn" type="submit" value="Continue" /></a>
-            <p id="last_p_tag">By Continuing, I accept TCP- Bigbasket's <span style=color:blue;>Terms and Conditions</span> and <span style=color:blue;>Privacy Policy</span></p>
-          </form>
+
+
+    <div id="container">
+        <h3>LOGIN/SIGN UP</h3>
+        <form id="mobile_login_form">
+            <p>Enter Mobile Number(10-Digit)</p>
+            <input type="text" id="mobile_number">
+        </form>
+        <div>
+            <a href="login_using_email.html"><button>Login using Email Address</button> </a>
+            <a href="otp.html"><button>Continue</button></a>
         </div>
-    </main>
+
+        <p>By Continuing, I accept TCP- Bigbasket's <span>Terms and Conditions</span>and<span>Privacy Policy</span>
+        </p>
+    </div>
 </body>
+
 </html>
 <script>
 
-    document.getElementById("mobile_login_form").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent form submission
-        var inputValue = document.getElementById("mobile_number").value;
-        localStorage.setItem("mobile_2", inputValue);
-        window.location.href = "otp.html"; // Redirect to otp.html
+    document.querySelector('#container > div > a:nth-child(2) > button').addEventListener('click', function() {
+        storeDataToLocalStorage();
     });
-
-// ############### this code is for store the data in existing local storage ########
-
-    // Retrieve the existing JSON string from local storage
-    let existingData = localStorage.getItem('creds');
-
-    // If 'creds' key does not exist in local storage, initialize it with an empty object
-    if (!existingData) {
-        localStorage.setItem('creds', JSON.stringify({}));
+    // Function to store data to local storage
+    function storeDataToLocalStorage() {
+        var mobileNumber = document.getElementById('mobile_number').value;
+        localStorage.setItem('mobile2', mobileNumber);
     }
 
-    const mobile_login_form = document.querySelector('#mobile_login_form');
-    
-    mobile_login_form.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        var mobile_number = document.querySelector('#mobile_number').value;
-
-        // Validate the mobile number (e.g. check for valid format)
-
-        // Retrieve the existing JSON string from local storage
-        let existingData = localStorage.getItem('creds');
-
-        // Parse the retrieved JSON string into a JavaScript object
-        let creds = JSON.parse(existingData);
-
-        // Add new data to the JavaScript object
-        creds.name = mobile_number;
-
-        // Store the updated JavaScript object back to local storage
-        localStorage.setItem('creds', JSON.stringify(creds));
-    });
 </script>
