@@ -14,7 +14,10 @@
             margin: 0;
             box-sizing: border-box;
         }
-
+        #childmid2>a {
+            color: black;
+            text-decoration: none;
+        }
 
 
         #navbox {
@@ -26,7 +29,16 @@
         #topnav {
             display: flex;
             justify-content: flex-end;
+            align-items: center;
             gap: 15px;
+        }
+        #show_name {
+
+        font-size: 15px;
+        }
+
+        #username>p {
+        margin: 0 -15px 0 0;
         }
 
         #topnav>p {
@@ -534,6 +546,9 @@
                 <span><i class="fa-solid fa-location-dot"></i></span> 560004,
                 Bangalore <span><i class="fa-solid fa-angle-down"></i></span>
             </p>
+            <div id="username">
+                <p id="show_name"></p>
+            </div>
             <div class="dropdown">
                 <button class="dropbtn">
                     BigBasketeer<i class="fa fa-caret-down"></i>
@@ -542,11 +557,11 @@
                     <a href="#">My Account</a>
                     <a href="#">My Basket</a>
                     <a href="#">My Orders</a>
-                    <a href="">Wallet</a>
+                    <a href="#">Wallet</a>
                     <a href="#">Rewards</a>
                     <a href="#">Ask Us</a>
                     <a href="#">Customer Service</a>
-                    <a href="#">logout</a>
+                    <a href="signup.html">Signup/Login</a>
                 </div>
             </div>
         </div>
@@ -563,14 +578,16 @@
                         </form>
                     </div>
                 </div>
-                <div id="mybasket">
-                    <div id="fntbasket"><span><i class="fa-solid fa-basket-shopping"></i></span></div>
+                <a href="newcart.html">
+                    <div id="mybasket">
+                        <div id="fntbasket"><span><i class="fa-solid fa-basket-shopping"></i></span></i></div>
 
-                    <div id="colbasket">
-                        <p>My Basket</p>
-                        <p>0 items</p>
+                        <div id="colbasket">
+                            <p>My Basket</p>
+                            <!-- <p>0 items</p> -->
+                        </div>
                     </div>
-                </div>
+                </a>
 
             </div>
 
@@ -582,14 +599,18 @@
                         SHOP BY CATEGORY <i class="fa fa-caret-down lfsd"></i>
                     </button>
                     <div class="dropdown-content_bottomnav">
-                        <a href="#">My Account</a>
-                        <a href="#">My Basket</a>
-                        <a href="#">My Orders</a>
-                        <a href="">Wallet</a>
-                        <a href="#">Rewards</a>
-                        <a href="#">Ask Us</a>
-                        <a href="#">Customer Service</a>
-                        <a href="#">logout</a>
+                        <a href="productFruitandVegetable.html">Fruits & Vegetables</a>
+                        <a href="productBakery.html">Bakery, Cakes & Dairy</a>
+                        <a href="#">Foodgrains, Oil & Masala</a>
+                        <a href="#">Beverages</a>
+                        <a href="#">Snacks & Branded Foods</a>
+                        <a href="#">Beauty & Hygiene</a>
+                        <a href="#">Cleaning & Household</a>
+                        <a href="#">Kitchen, Garden & Pets </a>
+                        <a href="#">Eggs, Meat & Fish</a>
+                        <a href="#">Gourmet & World Food</a>
+                        <a href="#">Baby Care</a>
+                        <a href="#">View All</a>
                     </div>
                 </div>
             </div>
@@ -1249,5 +1270,8 @@
             display(a);
         }
     }
+    var storedValue = localStorage.getItem("name1");
+    var headingElement = document.getElementById("show_name");
+    headingElement.textContent = storedValue;
 
 </script>
