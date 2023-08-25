@@ -17,4 +17,4 @@ This project is a testament to the power of technology. With a robust blend of J
 <h1>Collaborate and Innovate</h1>
 As you explore this repository, consider the possibilities. Imagine how the principles demonstrated can be applied to your own projects. Whether you're a developer seeking inspiration or an entrepreneur yearning to redefine an industry, Big Basket's journey holds valuable insights.
 
-Let's collaborate and pave the way for future innovations. Feel free to reach out at Portfolio ( https://prembhooma.github.io/ ) or connect with me on LinkedIn ( https://www.linkedin.com/in/prem-bhooma-8bb225220/ ). Together, we can bring the essence of Big Basket's success into your own ventures, redefining experiences and shaping the digital landscape.
+Let's collaborate and pave the way for future innovations. Together, we can bring the essence of Big Basket's success into your own ventures, redefining experiences and shaping the digital landscape.
